@@ -1,0 +1,122 @@
+[
+  {
+    "id": "review-1",
+    "name": "Elias Järkemyr",
+    "rating": 5,
+    "date": "2024-11-30",
+    "text": {
+      "sv": "Klippt mig här flera gånger och har varit lika nöjd varje gång. Proffsig och härlig personal med ett öga för perfektion. Kan absolut rekommendera!",
+      "en": "Have had my hair cut here several times and have been equally satisfied every time.Professional and lovely staff with an eye for perfection. Can absolutely recommend!"
+    },
+    "source": "Google",
+    "translation": true
+  },
+  {
+    "id": "review-2",
+    "name": "Robert",
+    "rating": 5,
+    "date": "2024-11-30",
+    "text": {
+      "sv": "Riktigt nöjd med klippning av både hår och skägg.\nInte alla som är bra på helheten.\nBra känsla samt lyhörd för kunden.\nRekommenderas starkt!",
+      "en": "Really satisfied with cutting both hair and beard.\nNot everyone is good at the big picture.\nGood feeling and responsive to the customer.\nHighly recommended!"
+    },
+    "source": "Google",
+    "translation": true
+  },
+  {
+    "id": "review-3",
+    "name": "Sebastian Johansson",
+    "rating": 5,
+    "date": "2024-11-28",
+    "text": {
+      "sv": "Toppklass ☝️",
+      "en": "Top class ☝️"
+    },
+    "source": "Google",
+    "translation": true
+  },
+  {
+    "id": "review-4",
+    "name": "Liam Borg",
+    "rating": 5,
+    "date": "2024-11-28",
+    "text": {
+      "sv": "Grymt resultat och trevlig service, testade när jag var på besök i Stockholm och kommer definitivt tillbaka!🙏🏽",
+      "en": "Great result and nice service, tested when I was visiting Stockholm and will definitely come back!🙏🏽"
+    },
+    "source": "Google",
+    "translation": true
+  },
+  {
+    "id": "review-5",
+    "name": "Marcus Larsson",
+    "rating": 5,
+    "date": "2024-11-28",
+    "text": {
+      "sv": "Rekommenderar starkt denna salong! Trevlig personal & grymt duktiga på sin sak. 5/5",
+      "en": "Highly recommend this salon! Nice staff & very good at what they do. 5/5"
+    },
+    "source": "Google",
+    "translation": true
+  },
+  {
+    "id": "review-6",
+    "name": "Naji Mrad",
+    "rating": 5,
+    "date": "2024-11-24",
+    "text": {
+      "sv": "Jag har varit på många olika barbershops, men ingen har imponerat på mig så mycket som denna. Från det ögonblick jag klev in, blev jag bemött med vänlighet och professionalism. Själva klippningen och skägget var perfekt, noggrant utförd och precis enligt mina önskemål. Det märks att han verkligen brinner för sitt yrke och lägger stor vikt vid detaljer, helt enkelt världsklass!",
+      "en": "I have been to many different barbershops, but none have impressed me as much as this one. From the moment I stepped in, I was greeted with kindness and professionalism. The actual haircut and beard was perfect, carefully executed and exactly according to my wishes. It can be seen that he is really passionate about his profession and pays great attention to details, simply world class!"
+    },
+    "source": "Google",
+    "translation": true
+  },
+  {
+    "id": "review-7",
+    "name": "Lisa Olofsson",
+    "rating": 5,
+    "date": "2024-11-24",
+    "text": {
+      "sv": "Var där med min son, otroligt duktig frisör. Bra bemötande , fräsch salong och öga för detaljer. Vi kommer verkligen att komma tillbaka.",
+      "en": "Was there with my son, incredibly talented hairdresser. Good treatment, fresh salon and eye for details. We will definitely be back."
+    },
+    "source": "Google",
+    "translation": true
+  },
+  {
+    "id": "review-8",
+    "name": "Chris S",
+    "rating": 5,
+    "date": "2024-11-24",
+    "text": {
+      "sv": "En frisör som verkligen kan sin sak! Han har ett öga för detaljer och jobbar snabbt och effektivt. Rekommenderas starkt!",
+      "en": "A hairdresser who really knows his stuff! He has an eye for detail and works quickly and efficiently. Highly recommended!"
+    },
+    "source": "Google",
+    "translation": true
+  },
+  {
+    "id": "review-9",
+    "name": "Sandy William",
+    "rating": 5,
+    "date": "2024-11-24",
+    "text": {
+      "sv": "Jag och min pappa besökte nyligen MAN WITH  CLASS barbershop i Stockholm, en fantastisk barberarsalong, och vi var båda jättenöjda med upplevelsen. Från det ögonblick vi klev in i butiken blev vi välkomnade av en vänlig och professionell personal som gjorde att vi kände oss som hemma. Atmosfären var avslappnad och inbjudande, vilket gjorde det lätt att slappna av. Vi uppskattade verkligen den personliga servicen och den uppmärksamhet som personalen gav oss. Det är tydligt att de brinner för sitt arbete och vill ge sina kunder den bästa möjliga upplevelsen. Jag rekommenderar starkt denna barberarsalong till alla som söker en högkvalitativ klippning och en trevlig atmosfär!",
+      "en": "Me and my dad recently visited MAN WITH CLASS barbershop in Stockholm, a fantastic barbershop, and we were both very pleased with the experience. From the moment we stepped into the store, we were greeted by friendly and professional staff who made us feel right at home. The atmosphere was relaxed and inviting, making it easy to relax. We really appreciated the personal service and attention the staff gave us. It is clear that they are passionate about their work and want to give their customers the best possible experience. I highly recommend this barbershop to anyone looking for a high quality haircut and a nice atmosphere!"
+    },
+    "source": "Google",
+    "translation": true
+  },
+  {
+    "id": "review-10",
+    "name": "can sag",
+    "rating": 5,
+    "date": "2024-11-24",
+    "text": {
+      "sv": "Servicen och upplevelsen lever definitivt upp till namnet MAN WITH CLASS. Super nöjd med allt, verkligen!",
+      "en": "The service and experience definitely lives up to the name MAN WITH CLASS. Super happy with everything, really!"
+    },
+    "source": "Google",
+    "translation": true
+  }
+]

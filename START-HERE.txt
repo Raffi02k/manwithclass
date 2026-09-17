@@ -1,0 +1,9 @@
+MAN WITH CLASS - MEDIAMAGNET
+
+1. Packa upp ZIP-filen.
+2. Snabbvisning: oppna preview/ManWithClass-Preview.html.
+3. Projekt och redigering: las README.md.
+4. Fardigbyggd lokal test: dubbelklicka START-PREVIEW-WINDOWS.bat (Node.js kravs).
+
+VIKTIGT: Projektfilerna ar aterskapade fran den sparade forhandsversionen.
+Det ar en testversion med tillfalliga bilder, inte en fardig lansering.

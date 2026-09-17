@@ -1,0 +1,7 @@
+
+> man-with-class-frontend@0.1.0 build:portable
+> node scripts/build-portable.mjs && node scripts/prerender.mjs portable && node scripts/check-build.mjs
+
+Portable client + server bundles built.
+Prerendered 54 pages + 404. Indexing: false
+PASS: 54 pages: HTML, H1, titles, language links, JSON-LD, images, indexing.

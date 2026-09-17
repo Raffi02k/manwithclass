@@ -1,0 +1,653 @@
+[
+  {
+    "id": "herrklippning",
+    "slug": {
+      "sv": "herrklippning",
+      "en": "mens-haircut"
+    },
+    "category": "hair",
+    "price": 450,
+    "minutes": 30,
+    "image": "/images/manW-Herrklippning.png",
+    "illustrative": false,
+    "title": {
+      "sv": "Herrklippning",
+      "en": "Men’s haircut"
+    },
+    "intro": {
+      "sv": "En ny form eller en uppfräschning av din vanliga stil. Hårtvätt, föning och styling ingår.",
+      "en": "A new shape or a refresh of your usual style. Your appointment includes a wash, blow-dry and styling."
+    },
+    "includes": {
+      "sv": [
+        "Herrklippning",
+        "Hårtvätt",
+        "Föning",
+        "Styling"
+      ],
+      "en": [
+        "Men’s haircut",
+        "Hair wash",
+        "Blow-dry",
+        "Styling"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "har-och-skagg",
+    "slug": {
+      "sv": "har-och-skagg",
+      "en": "hair-and-beard"
+    },
+    "category": "combination",
+    "price": 680,
+    "minutes": 45,
+    "image": "/images/manW-Har-&-skagg.png",
+    "illustrative": false,
+    "title": {
+      "sv": "Hår & skägg",
+      "en": "Hair & beard"
+    },
+    "intro": {
+      "sv": "Klippning och skäggtrimning i samma besök. En genomarbetad helhet med varma och kalla handdukar.",
+      "en": "A haircut and beard trim in one visit. A considered finish with hot and cold towels."
+    },
+    "includes": {
+      "sv": [
+        "Hårklippning",
+        "Skäggtrimning",
+        "Hårtvätt",
+        "Föning",
+        "Styling",
+        "Varma & kalla handdukar"
+      ],
+      "en": [
+        "Haircut",
+        "Beard trim",
+        "Hair wash",
+        "Blow-dry",
+        "Styling",
+        "Hot & cold towels"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "skaggtrimning",
+    "slug": {
+      "sv": "skaggtrimning",
+      "en": "beard-trim"
+    },
+    "category": "beard",
+    "price": 350,
+    "minutes": 30,
+    "image": "/images/manW-Skaggtrimning.png",
+    "illustrative": false,
+    "title": {
+      "sv": "Skäggtrimning",
+      "en": "Beard trim"
+    },
+    "intro": {
+      "sv": "Form, längd och detaljer. Skägget trimmas med maskin och stylas med skäggvårdsprodukter.",
+      "en": "Shape, length and the finishing details. Clipper beard trimming, finished with beard-care products."
+    },
+    "includes": {
+      "sv": [
+        "Trimning med maskin",
+        "Styling med skäggvårdsprodukter"
+      ],
+      "en": [
+        "Clipper beard trim",
+        "Styling with beard-care products"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "luxury-treatment",
+    "slug": {
+      "sv": "luxury-treatment",
+      "en": "luxury-treatment"
+    },
+    "category": "ritual",
+    "price": 850,
+    "minutes": 55,
+    "image": "/images/manW-Luxury-Treatment.png",
+    "illustrative": false,
+    "title": {
+      "sv": "Luxury Treatment",
+      "en": "Luxury Treatment"
+    },
+    "intro": {
+      "sv": "Hår, skägg och en stund för dig själv. Vårt Luxury-paket samlar flera behandlingar i ett besök.",
+      "en": "Hair, beard and some time to yourself. Our Luxury package brings several treatments together in one visit."
+    },
+    "includes": {
+      "sv": [
+        "Hårklippning",
+        "Skäggtrimning & rakning",
+        "Varma & kalla handdukar",
+        "Vaxning av öron & näsa",
+        "Föning & styling",
+        "Huvudmassage",
+        "Hårmask"
+      ],
+      "en": [
+        "Haircut",
+        "Beard trim & shave",
+        "Hot & cold towels",
+        "Ear & nose waxing",
+        "Blow-dry & styling",
+        "Head massage",
+        "Hair mask"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "klippning-sidor",
+    "slug": {
+      "sv": "klippning-sidor",
+      "en": "sides-only"
+    },
+    "category": "hair",
+    "price": 390,
+    "minutes": 30,
+    "image": "/images/manW-Klippning-av-sidorna.png",
+    "illustrative": false,
+    "title": {
+      "sv": "Klippning av sidorna",
+      "en": "Sides-only haircut"
+    },
+    "intro": {
+      "sv": "För dig som vill fräscha upp sidorna utan att klippa hela håret. Tvätt, föning och styling ingår.",
+      "en": "Refresh the sides without a full haircut. Includes a wash, blow-dry and styling."
+    },
+    "includes": {
+      "sv": [
+        "Klippning av sidorna",
+        "Hårtvätt",
+        "Föning",
+        "Styling"
+      ],
+      "en": [
+        "Sides-only haircut",
+        "Hair wash",
+        "Blow-dry",
+        "Styling"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "maskinklippning",
+    "slug": {
+      "sv": "maskinklippning",
+      "en": "buzz-cut"
+    },
+    "category": "hair",
+    "price": 250,
+    "minutes": 15,
+    "image": "/images/manW-Maskinklippning-snagg.png",
+    "illustrative": false,
+    "title": {
+      "sv": "Maskinklippning / snagg",
+      "en": "Buzz cut"
+    },
+    "intro": {
+      "sv": "Kort och avskalat. En maskinklippning med hårtvätt för en enkel, välskött stil.",
+      "en": "Short and clean. A clipper cut with a hair wash for a straightforward, well-groomed finish."
+    },
+    "includes": {
+      "sv": [
+        "Maskinklippning",
+        "Hårtvätt"
+      ],
+      "en": [
+        "Clipper cut",
+        "Hair wash"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "barnklippning",
+    "slug": {
+      "sv": "barnklippning",
+      "en": "childrens-haircut"
+    },
+    "category": "hair",
+    "price": 350,
+    "minutes": 30,
+    "image": "/images/child-cut.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Barnklippning, 0–10 år",
+      "en": "Children’s haircut, ages 0–10"
+    },
+    "intro": {
+      "sv": "En klippning för salongens yngre gäster. Föning och styling ingår för barn till och med 10 år.",
+      "en": "A haircut for our younger guests. Includes blow-drying and styling for children aged 10 and under."
+    },
+    "includes": {
+      "sv": [
+        "Barnklippning (0–10 år)",
+        "Föning & styling"
+      ],
+      "en": [
+        "Haircut for ages 0–10",
+        "Blow-dry & styling"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "ungdom-student",
+    "slug": {
+      "sv": "ungdom-student",
+      "en": "youth-student-haircut"
+    },
+    "category": "hair",
+    "price": 390,
+    "minutes": 30,
+    "image": "/images/manW-Ungdom-student.png",
+    "illustrative": false,
+    "title": {
+      "sv": "Ungdom / student",
+      "en": "Youth / student haircut"
+    },
+    "intro": {
+      "sv": "Klippning för ungdomar och studenter, inklusive tvätt, föning och styling. Fråga oss om villkoren vid bokning.",
+      "en": "A haircut for young people and students, including wash, blow-dry and styling. Ask us about eligibility when booking."
+    },
+    "includes": {
+      "sv": [
+        "Ungdoms- eller studentklippning",
+        "Hårtvätt",
+        "Föning",
+        "Styling"
+      ],
+      "en": [
+        "Youth or student haircut",
+        "Hair wash",
+        "Blow-dry",
+        "Styling"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "pensionarsklippning",
+    "slug": {
+      "sv": "pensionarsklippning",
+      "en": "senior-haircut"
+    },
+    "category": "hair",
+    "price": 350,
+    "minutes": 30,
+    "image": "/images/manW-Pensionarsklippning.png",
+    "illustrative": false,
+    "title": {
+      "sv": "Pensionärsklippning",
+      "en": "Senior haircut"
+    },
+    "intro": {
+      "sv": "En omsorgsfull uppfräschning av din frisyr. Pensionärsklippningen inkluderar hårtvätt, föning och styling.",
+      "en": "A considered refresh of your hairstyle. Our senior haircut includes a wash, blow-dry and styling."
+    },
+    "includes": {
+      "sv": [
+        "Pensionärsklippning",
+        "Hårtvätt",
+        "Föning",
+        "Styling"
+      ],
+      "en": [
+        "Senior haircut",
+        "Hair wash",
+        "Blow-dry",
+        "Styling"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "hartvatt-styling",
+    "slug": {
+      "sv": "hartvatt-styling",
+      "en": "wash-and-style"
+    },
+    "category": "hair",
+    "price": 200,
+    "minutes": 20,
+    "image": "/images/wash.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Hårtvätt, föning & styling",
+      "en": "Wash, blow-dry & style"
+    },
+    "intro": {
+      "sv": "En nytvättad, stylad känsla utan klippning. Passar när du vill lägga fokus på finishen.",
+      "en": "A freshly washed and styled finish, without a haircut. For days when the finishing touches are what matter."
+    },
+    "includes": {
+      "sv": [
+        "Hårtvätt",
+        "Föning",
+        "Styling"
+      ],
+      "en": [
+        "Hair wash",
+        "Blow-dry",
+        "Styling"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "traditionell-rakning",
+    "slug": {
+      "sv": "traditionell-rakning",
+      "en": "traditional-shave"
+    },
+    "category": "beard",
+    "price": 360,
+    "minutes": 30,
+    "image": "/images/beard-detail.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Traditionell rakning",
+      "en": "Traditional wet shave"
+    },
+    "intro": {
+      "sv": "Klassisk slätrakning med kniv. Varma och kalla handdukar och aftershave ingår i behandlingen.",
+      "en": "A traditional clean razor shave, with hot and cold towels and aftershave included."
+    },
+    "includes": {
+      "sv": [
+        "Slätrakning med kniv",
+        "Varma & kalla handdukar",
+        "Aftershave"
+      ],
+      "en": [
+        "Clean razor shave",
+        "Hot & cold towels",
+        "Aftershave"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "skagg-varma-handdukar",
+    "slug": {
+      "sv": "skagg-varma-handdukar",
+      "en": "beard-and-hot-towels"
+    },
+    "category": "beard",
+    "price": 390,
+    "minutes": 30,
+    "image": "/images/beard-detail.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Skägg & varma handdukar",
+      "en": "Beard & hot towels"
+    },
+    "intro": {
+      "sv": "Skäggtrimning med maskin eller rakning med kniv. En barberarbehandling med både varma och kalla handdukar.",
+      "en": "Clipper beard trimming or a razor shave, with hot and cold towels as part of your treatment."
+    },
+    "includes": {
+      "sv": [
+        "Maskintrimning eller knivrakning",
+        "Varma & kalla handdukar"
+      ],
+      "en": [
+        "Clipper trim or razor shave",
+        "Hot & cold towels"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "skagg-och-vaxning",
+    "slug": {
+      "sv": "skagg-och-vaxning",
+      "en": "beard-and-waxing"
+    },
+    "category": "beard",
+    "price": 490,
+    "minutes": 30,
+    "image": "/images/beard.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Skägg & vaxning",
+      "en": "Beard & waxing"
+    },
+    "intro": {
+      "sv": "Skäggvård tillsammans med vaxning av öron och näsa. Kontrollera val av trimning eller rakning i bokningen.",
+      "en": "Beard grooming paired with ear and nose waxing. Confirm your choice of trim or shave when booking."
+    },
+    "includes": {
+      "sv": [
+        "Skäggbehandling",
+        "Vaxning av öron & näsa"
+      ],
+      "en": [
+        "Beard grooming",
+        "Ear & nose waxing"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "vaxning",
+    "slug": {
+      "sv": "vaxning",
+      "en": "ear-and-nose-waxing"
+    },
+    "category": "finish",
+    "price": 220,
+    "minutes": 15,
+    "image": "/images/wax.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Vaxning av öron & näsa",
+      "en": "Ear & nose waxing"
+    },
+    "intro": {
+      "sv": "De små detaljerna gör helheten. Borttagning av hår i öron och näsa med ansiktsvax.",
+      "en": "Small details complete the look. Removal of unwanted ear and nose hair using facial wax."
+    },
+    "includes": {
+      "sv": [
+        "Vaxning av öron",
+        "Vaxning av näsa"
+      ],
+      "en": [
+        "Ear waxing",
+        "Nose waxing"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "huvudrakning-skagg",
+    "slug": {
+      "sv": "huvudrakning-skagg",
+      "en": "head-shave-and-beard"
+    },
+    "category": "combination",
+    "price": 680,
+    "minutes": 45,
+    "image": "/images/hair-beard.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Huvudrakning & skägg",
+      "en": "Head shave & beard trim"
+    },
+    "intro": {
+      "sv": "Huvudrakning med kniv och skäggtrimning med maskin. Hårtvätt ingår i behandlingen.",
+      "en": "A razor head shave and clipper beard trim, with a hair wash included."
+    },
+    "includes": {
+      "sv": [
+        "Huvudrakning med kniv",
+        "Skäggtrimning med maskin",
+        "Hårtvätt"
+      ],
+      "en": [
+        "Razor head shave",
+        "Clipper beard trim",
+        "Hair wash"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "snagg-skagg",
+    "slug": {
+      "sv": "snagg-skagg",
+      "en": "buzz-cut-and-beard"
+    },
+    "category": "combination",
+    "price": 550,
+    "minutes": 30,
+    "image": "/images/hair-beard.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Snagg & skägg",
+      "en": "Buzz cut & beard trim"
+    },
+    "intro": {
+      "sv": "Maskinklippning av hår och skägg i ett och samma besök. Tvätt ingår.",
+      "en": "A clipper cut and beard trim in the same appointment, with a wash included."
+    },
+    "includes": {
+      "sv": [
+        "Maskinklippning / snagg",
+        "Skäggtrimning med maskin",
+        "Hårtvätt"
+      ],
+      "en": [
+        "Buzz cut",
+        "Clipper beard trim",
+        "Hair wash"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "har-skagg-rakning",
+    "slug": {
+      "sv": "har-skagg-rakning",
+      "en": "hair-beard-and-shave"
+    },
+    "category": "combination",
+    "price": 720,
+    "minutes": 45,
+    "image": "/images/hair-beard.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Hår, skägg & rakning",
+      "en": "Hair, beard & razor finish"
+    },
+    "intro": {
+      "sv": "En klippning, skäggtrimning och knivrakning för en genomarbetad finish. Frånpris; aktuellt pris visas i bokningen.",
+      "en": "A haircut, beard trim and razor finish. Starting price; see the booking service for the current final price."
+    },
+    "includes": {
+      "sv": [
+        "Hårklippning",
+        "Skäggtrimning & knivrakning",
+        "Hårtvätt",
+        "Föning",
+        "Styling",
+        "Varma & kalla handdukar"
+      ],
+      "en": [
+        "Haircut",
+        "Beard trim & razor finish",
+        "Hair wash",
+        "Blow-dry",
+        "Styling",
+        "Hot & cold towels"
+      ]
+    },
+    "from": true
+  },
+  {
+    "id": "royal-treatment",
+    "slug": {
+      "sv": "royal-treatment",
+      "en": "royal-treatment"
+    },
+    "category": "ritual",
+    "price": 1290,
+    "minutes": 65,
+    "image": "/images/royal.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Royal Treatment",
+      "en": "Royal Treatment"
+    },
+    "intro": {
+      "sv": "Vårt mest omfattande paket. Luxury-behandlingens moment kompletteras med Vapozon och en Black Peel-off-ansiktsmask.",
+      "en": "Our most extensive package. The Luxury treatment is complemented by Vapozon and a Black Peel-off facial mask."
+    },
+    "includes": {
+      "sv": [
+        "Hårklippning",
+        "Skäggtrimning & rakning",
+        "Varma & kalla handdukar",
+        "Vaxning av öron & näsa",
+        "Föning & styling",
+        "Huvudmassage",
+        "Hårmask",
+        "Vapozon & Black Peel-off-ansiktsmask"
+      ],
+      "en": [
+        "Haircut",
+        "Beard trim & shave",
+        "Hot & cold towels",
+        "Ear & nose waxing",
+        "Blow-dry & styling",
+        "Head massage",
+        "Hair mask",
+        "Vapozon & Black Peel-off facial mask"
+      ]
+    },
+    "from": false
+  },
+  {
+    "id": "huvud-nackmassage",
+    "slug": {
+      "sv": "huvud-nackmassage",
+      "en": "head-and-neck-massage"
+    },
+    "category": "finish",
+    "price": 350,
+    "minutes": 20,
+    "image": "/images/wash.webp",
+    "illustrative": true,
+    "title": {
+      "sv": "Huvud- & nackmassage",
+      "en": "Head & neck massage"
+    },
+    "intro": {
+      "sv": "Luta dig tillbaka och ta en paus. En 20 minuters behandling med fokus på huvud och nacke.",
+      "en": "Lean back and take a moment. A 20-minute session focusing on the head and neck."
+    },
+    "includes": {
+      "sv": [
+        "Huvudmassage",
+        "Nackmassage"
+      ],
+      "en": [
+        "Head massage",
+        "Neck massage"
+      ]
+    },
+    "from": false
+  }
+]

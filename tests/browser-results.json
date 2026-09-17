@@ -1,0 +1,8 @@
+{
+  "status": "BLOCKED",
+  "passed": [
+    "54 clean URLs returned HTTP 200 before browser navigation"
+  ],
+  "reason": "Chromium navigation blocked by administrator policy: ERR_BLOCKED_BY_ADMINISTRATOR",
+  "interactive_checks_completed": false
+}

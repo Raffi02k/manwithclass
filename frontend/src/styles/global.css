@@ -448,7 +448,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 }
 /* Cinematic scroll story. Native sticky positioning, no scroll hijacking. */
 .cinema {
-  height: 400svh;
+  height: 800svh;
   position: relative;
   --story-progress: 0
 }
@@ -2905,7 +2905,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
     height: 44px
   }
   .cinema {
-    height: 280svh
+    height: 800svh
   }
   .cinema-sticky {
     height: 100svh;

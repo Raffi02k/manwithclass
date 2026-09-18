@@ -20,6 +20,7 @@ export function CinematicHero() {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         const el = section.current;
+        const stage = el.querySelector('.cinema-sticky');
         const movie = video.current;
         const panels = Array.from(el.querySelectorAll('[data-scene]'));
         const posters = Array.from(el.querySelectorAll('[data-poster]'));
@@ -67,11 +68,20 @@ export function CinematicHero() {
             scrollTrigger: {
                 trigger: el,
                 start: 'top top',
-                end: 'bottom bottom',
+                end: () => `+=${Math.max(1, el.offsetHeight - stage.offsetHeight)}`,
                 scrub: .5,
                 invalidateOnRefresh: true
             }
         });
+        // CSS edits and responsive layout changes can alter the scroll distance
+        // without a window resize. Keep the video mapped to the full sticky range.
+        let refreshFrame = 0;
+        const layoutObserver = new ResizeObserver(() => {
+            cancelAnimationFrame(refreshFrame);
+            refreshFrame = requestAnimationFrame(() => tween.scrollTrigger.refresh());
+        });
+        layoutObserver.observe(el);
+        layoutObserver.observe(stage);
         const ready = () => { if (!failed) { setMovieReady(true); seek(); } };
         const error = () => { failed = true; setMovieReady(false); };
         movie.addEventListener('loadedmetadata', seek);
@@ -82,6 +92,8 @@ export function CinematicHero() {
         if (movie.error) error();
 
         return () => {
+            layoutObserver.disconnect();
+            cancelAnimationFrame(refreshFrame);
             tween.scrollTrigger?.kill();
             tween.kill();
             movie.removeEventListener('loadedmetadata', seek);
@@ -93,7 +105,8 @@ export function CinematicHero() {
 
     function jump(i) {
         const el = section.current;
-        window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY + (el.offsetHeight - window.innerHeight) * [0, .49, .9][i], behavior: reduced ? 'auto' : 'smooth' });
+        const distance = el.offsetHeight - el.querySelector('.cinema-sticky').offsetHeight;
+        window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY + distance * [0, .49, .9][i], behavior: reduced ? 'auto' : 'smooth' });
     }
 
     return (

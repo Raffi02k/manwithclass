@@ -38,7 +38,29 @@ function structuredData(path) { const meta = getMetadata(path); if (meta.key ===
     graph.push({ '@type': 'Service', '@id': meta.canonical + '#service', name: s.title[meta.lang], description: s.intro[meta.lang], serviceType: s.title[meta.lang], provider: { '@id': site_1.site.domain + '/#salon' }, areaServed: 'Stockholm', ...(s.from ? {} : { offers: { '@type': 'Offer', price: s.price, priceCurrency: 'SEK', url: site_1.site.bookingUrl } }) });
 } return { '@context': 'https://schema.org', '@graph': graph }; }
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-function renderHead(path) { const m = getMetadata(path), schema = structuredData(path); return `<title>${esc(m.title)}</title>\n<meta name="description" content="${esc(m.description)}">\n<meta name="robots" content="${m.indexable ? 'index,follow,max-image-preview:large' : 'noindex,follow'}">\n<link rel="canonical" href="${esc(m.canonical)}">\n${m.alternates.map(a => `<link rel="alternate" hreflang="${a.lang}" href="${esc(a.href)}">`).join('\n')}\n<meta property="og:title" content="${esc(m.title)}">\n<meta property="og:description" content="${esc(m.description)}">\n<meta property="og:type" content="website">\n<meta property="og:url" content="${esc(m.canonical)}">\n<meta property="og:image" content="${site_1.site.domain}/images/salon-wide.webp">\n<meta property="og:image:alt" content="Man With Class Barbershop, Stockholm">\n<meta property="og:locale" content="${m.lang === 'sv' ? 'sv_SE' : 'en_GB'}">\n<meta name="twitter:card" content="summary_large_image">\n${schema ? `<script id="structured-data" type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}<\/script>` : ''}`; }
+function renderHead(path) {
+    const m = getMetadata(path), schema = structuredData(path);
+    const image = esc(`${site_1.site.domain}/images/index-pic.png`);
+    return `<title>${esc(m.title)}</title>
+<meta name="description" content="${esc(m.description)}">
+<meta name="robots" content="${m.indexable ? 'index,follow,max-image-preview:large' : 'noindex,follow'}">
+<link rel="canonical" href="${esc(m.canonical)}">
+${m.alternates.map(a => `<link rel="alternate" hreflang="${a.lang}" href="${esc(a.href)}">`).join('\n')}
+<meta property="og:title" content="${esc(m.title)}">
+<meta property="og:description" content="${esc(m.description)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="${esc(site_1.site.name)}">
+<meta property="og:url" content="${esc(m.canonical)}">
+<meta property="og:image" content="${image}">
+<meta property="og:image:alt" content="Man With Class Barbershop, Stockholm">
+<meta property="og:locale" content="${m.lang === 'sv' ? 'sv_SE' : 'en_GB'}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(m.title)}">
+<meta name="twitter:description" content="${esc(m.description)}">
+<meta name="twitter:image" content="${image}">
+<meta name="twitter:image:alt" content="Man With Class Barbershop, Stockholm">
+${schema ? `<script id="structured-data" type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}<\/script>` : ''}`;
+}
 
 export default moduleValues;
 const __export_getMetadata = moduleValues.getMetadata;

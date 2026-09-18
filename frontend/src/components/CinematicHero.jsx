@@ -82,24 +82,53 @@ export function CinematicHero() {
         });
         layoutObserver.observe(el);
         layoutObserver.observe(stage);
-        const ready = () => { if (!failed) { setMovieReady(true); seek(); } };
+        let disposed = false;
+        let priming = false;
+        const ready = () => {
+            if (disposed || failed || movie.readyState < 2) return;
+            // Decode a first frame on mobile, then hand playback back to scrolling.
+            movie.pause();
+            setMovieReady(true);
+            seek();
+        };
+        const prime = () => {
+            if (disposed || failed || priming) return;
+            if (movie.readyState >= 2) { ready(); return; }
+            movie.muted = true;
+            movie.defaultMuted = true;
+            priming = true;
+            movie.play().then(() => {
+                if (!disposed) ready();
+            }).catch(() => {
+                // Mobile power/data-saving modes may require the first touch.
+            }).finally(() => { priming = false; });
+        };
         const error = () => { failed = true; setMovieReady(false); };
         movie.addEventListener('loadedmetadata', seek);
         movie.addEventListener('loadeddata', ready);
+        movie.addEventListener('canplay', ready);
         movie.addEventListener('seeked', seek);
         movie.addEventListener('error', error);
-        if (movie.readyState >= 2) ready();
-        if (movie.error) error();
+        document.addEventListener('touchstart', prime, { passive: true });
+        document.addEventListener('pointerdown', prime, { passive: true });
+        // preload alone is only a hint on iOS; explicitly start the media loader.
+        if (movie.readyState < 2) movie.load();
+        prime();
 
         return () => {
+            disposed = true;
             layoutObserver.disconnect();
             cancelAnimationFrame(refreshFrame);
             tween.scrollTrigger?.kill();
             tween.kill();
             movie.removeEventListener('loadedmetadata', seek);
             movie.removeEventListener('loadeddata', ready);
+            movie.removeEventListener('canplay', ready);
             movie.removeEventListener('seeked', seek);
             movie.removeEventListener('error', error);
+            document.removeEventListener('touchstart', prime);
+            document.removeEventListener('pointerdown', prime);
+            movie.pause();
         };
     }, [reduced]);
 

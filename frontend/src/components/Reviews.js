@@ -27,6 +27,7 @@ function ReviewCard({ review, full = false, duplicate = false }) { const { lang,
 const groups = [data_1.reviews.slice(0, 5), data_1.reviews.slice(5)];
 function ReviewRow({ row }) {
     const rail = (0, react_1.useRef)(null), group = (0, react_1.useRef)(null), drag = (0, react_1.useRef)(null), focus = (0, react_1.useRef)(false), resume = (0, react_1.useRef)(0), pointer = (0, react_1.useRef)(false);
+    const touching = (0, react_1.useRef)(false), nativeScrolling = (0, react_1.useRef)(false);
     const { reduced } = (0, MotionProvider_1.useMotion)();
     const { t } = (0, useLocale_1.useLocale)();
     function moveTo(position) {
@@ -44,8 +45,9 @@ function ReviewRow({ row }) {
     }
     (0, react_1.useEffect)(() => {
         const el = rail.current;
-        if (!el || reduced) return;
+        if (!el) return;
         const wheel = (event) => {
+            if (reduced) return;
             const delta = event.deltaX || (event.shiftKey ? event.deltaY : 0);
             if (!delta) return;
             event.preventDefault();
@@ -53,17 +55,18 @@ function ReviewRow({ row }) {
             moveTo(el.scrollLeft + delta * unit);
             resume.current = performance.now() + 120;
         };
-        const normalize = () => {
-            const distance = group.current?.offsetWidth || 0;
-            if (distance && (el.scrollLeft < distance || el.scrollLeft >= distance * 2)) moveTo(el.scrollLeft);
+        const onScroll = () => {
+            // Never rewrite scrollLeft during a native swipe or its momentum.
+            // Recenter the seamless loop only when automatic motion resumes.
+            if (nativeScrolling.current) resume.current = performance.now() + 1000;
         };
         el.addEventListener('wheel', wheel, { passive: false });
-        el.addEventListener('scroll', normalize, { passive: true });
+        el.addEventListener('scroll', onScroll, { passive: true });
         window.addEventListener('pointerup', releasePointer);
         window.addEventListener('pointercancel', releasePointer);
         return () => {
             el.removeEventListener('wheel', wheel);
-            el.removeEventListener('scroll', normalize);
+            el.removeEventListener('scroll', onScroll);
             window.removeEventListener('pointerup', releasePointer);
             window.removeEventListener('pointercancel', releasePointer);
         };
@@ -72,7 +75,8 @@ function ReviewRow({ row }) {
         return; if (reduced) {
         el.scrollLeft = 0;
         return;
-    } let frame = 0, last = 0, position = group.current?.offsetWidth || 0; el.scrollLeft = position; let visible = false; const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; }); io.observe(el); const tick = (now) => { const distance = group.current?.offsetWidth || 0, dt = last ? Math.min(now - last, 40) : 0; last = now; if (visible && !document.hidden && !focus.current && !pointer.current && !drag.current && now > resume.current && distance > 0) {
+    } let frame = 0, last = 0, position = group.current?.offsetWidth || 0; el.scrollLeft = position; let visible = false; const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; }); io.observe(el); const tick = (now) => { const distance = group.current?.offsetWidth || 0, dt = last ? Math.min(now - last, 40) : 0; last = now; if (visible && !document.hidden && !focus.current && !pointer.current && !drag.current && !touching.current && now > resume.current && distance > 0) {
+        nativeScrolling.current = false;
         position += (row === 0 ? 1 : -1) * dt * .027;
         position = distance + ((position - distance) % distance + distance) % distance;
         el.scrollLeft = position;
@@ -80,11 +84,20 @@ function ReviewRow({ row }) {
     else
         position = el.scrollLeft; frame = requestAnimationFrame(tick); }; frame = requestAnimationFrame(tick); return () => { cancelAnimationFrame(frame); io.disconnect(); }; }, [row, reduced]);
     function scroll(dir) { resume.current = performance.now() + 120; if (rail.current) moveTo(rail.current.scrollLeft + dir * rail.current.clientWidth * .72); }
+    function touchStart() {
+        touching.current = true;
+        nativeScrolling.current = true;
+        focus.current = false;
+    }
+    function touchEnd() {
+        touching.current = false;
+        resume.current = performance.now() + 1000;
+    }
     return (0, jsx_runtime_1.jsxs)("div", { className: "review-row", children: [(0, jsx_runtime_1.jsx)("div", { className: "review-scroll-rail", ref: rail, id: `review-row-${row}`, tabIndex: 0, role: "region", "aria-label": `${t('Omdömesrad', 'Review row')} ${row + 1}`, onFocus: e => focus.current = e.target.matches(':focus-visible'), onBlur: e => { if (!e.currentTarget.contains(e.relatedTarget))
                     focus.current = false; }, onKeyDown: e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
                     e.preventDefault();
                     scroll(e.key === 'ArrowRight' ? 1 : -1);
-                } }, onPointerDown: e => { pointer.current = true; focus.current = false; if (e.button === 0 && !e.target.closest('a,button')) {
+                } }, onTouchStart: touchStart, onTouchEnd: touchEnd, onTouchCancel: touchEnd, onPointerDown: e => { if (e.pointerType !== 'mouse') return; pointer.current = true; focus.current = false; if (e.button === 0 && !e.target.closest('a,button')) {
                     drag.current = { x: e.clientX };
                     e.currentTarget.setPointerCapture(e.pointerId);
                 } }, onPointerMove: e => { if (drag.current) {

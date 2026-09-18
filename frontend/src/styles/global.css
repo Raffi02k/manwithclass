@@ -1299,7 +1299,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   grid-row: 2
 }
 .review-scroll-rail {
-  touch-action: pan-y;
+  touch-action: pan-x pan-y pinch-zoom;
   scroll-behavior: auto;
   grid-column: 1/-1;
   min-width: 0;

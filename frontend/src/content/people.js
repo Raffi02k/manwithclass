@@ -2,7 +2,7 @@ export const people = [
     {
         slug: 'roy', name: 'Roy', fullName: 'Roy Wan / Wan de Roy', published: true,
         role: { sv: 'Barberare / Wan de Roy Sthlm', en: 'Barber / Wan de Roy Sthlm' },
-        portrait: '/images/roy-barber.png', position: '42% 30%',
+        portrait: '/images/Roy-frisor.png', position: '42% 30%',
         intro: { sv: 'The craft is over. We came a long way.', en: 'The craft is over. We came a long way.' },
         presentation: {
             sv: 'Roy driver herrmodemärket Wan de Roy Sthlm. Resan började i Stockholm, med en passion för italiensk skräddarkonst och limiterade upplagor. Vägen har lett till samarbeten med internationella plattformar som MenWithClass och en fast punkt hos herrmodebutiken Menswear på Jungfrugatan i Stockholm. En personlig resa med hantverket, materialen och det klassiska herrmodet i centrum.',
@@ -25,7 +25,7 @@ export const people = [
     },
     {
         slug: 'serhi', name: 'Serhi', fullName: 'Serhi / Man With Class', published: true,
-        role: { sv: 'Barberare', en: 'Barber' }, portrait: null,
+        role: { sv: 'Barberare', en: 'Barber' }, portrait: '/images/Serhi-frisor.png',
         intro: { sv: 'Möt Serhi hos Man With Class vid Odenplan.', en: 'Meet Serhi at Man With Class, Odenplan.' },
         presentation: {
             sv: 'Serhi är en av barberarna hos Man With Class på Upplandsgatan 51 i Stockholm. Välj Serhi och den behandling du vill boka på Bokadirekt, där du också hittar aktuella priser och lediga tider.',

@@ -35,7 +35,7 @@ function bundle(entry,ssr) {
  const entryId=add(entry);
  const externals=ssr?'const __external = require;':`const __jsx=(type,props,key)=>window.React.createElement(type,key===undefined?props:{...props,key});
 const __runtime={jsx:__jsx,jsxs:__jsx,Fragment:window.React.Fragment};
-const __externals={'react':window.React,'react-dom/client':window.ReactDOM,'react-router-dom':window.ReactRouterDOM,'react/jsx-runtime':__runtime};
+const __externals={'react':window.React,'react-dom/client':window.ReactDOM,'react-router-dom':window.ReactRouterDOM,'react/jsx-runtime':__runtime,'gsap/dist/gsap.js':{gsap:window.gsap},'gsap/dist/ScrollTrigger.js':{ScrollTrigger:window.ScrollTrigger}};
 const __external=name=>{if(!__externals[name])throw new Error('Unknown external '+name);return __externals[name];};`;
  const result=externals+`\nconst __modules=[${modules.map(m=>'function(module,exports,__require,__external){\n'+m+'\n}').join(',\n')}];
 const __cache={};function __require(id){if(__cache[id])return __cache[id].exports;const m=__cache[id]={exports:{}};__modules[id](m,m.exports,__require,__external);return m.exports;}
@@ -46,7 +46,7 @@ fs.rmSync('dist',{recursive:true,force:true});
 fs.mkdirSync('dist/assets',{recursive:true});
 fs.mkdirSync('.ssr',{recursive:true});
 fs.cpSync('public','dist',{recursive:true});
-const vendor=fs.readFileSync('scripts/vendor/react-router-runtime.js','utf8');
+const vendor=['scripts/vendor/react-router-runtime.js','node_modules/gsap/dist/gsap.min.js','node_modules/gsap/dist/ScrollTrigger.min.js'].map(filename=>fs.readFileSync(filename,'utf8')).join('\n;\n');
 fs.writeFileSync('dist/assets/app.js',vendor+'\n'+bundle(path.join(src,'main.jsx'),false));
 fs.copyFileSync('src/styles/global.css','dist/assets/style.css');
 const html=fs.readFileSync('index.html','utf8').replace('<script type="module" src="/src/main.jsx"></script>','<script defer src="/assets/app.js"></script>').replace('</head>','<link rel="stylesheet" href="/assets/style.css"></head>');

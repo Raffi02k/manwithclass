@@ -18,23 +18,9 @@ Sidan har noindex och är inte publicerad av denna leverans.
 Det är den tidigare, fristående förhandsversionen med inbyggda bilder och hash-länkar.
 Google Fonts kräver internet; annars används reservtypsnitt.
 
-## Se den återskapade versionen utan npm-installation
-
-Du behöver Node.js (projektets engines-krav: >=22.12.0).
-Öppna en terminal i projektets huvudmapp och kör:
-
-```sh
-node frontend/scripts/serve.mjs
-```
-
-Öppna http://127.0.0.1:4173 i webbläsaren. Avsluta med Ctrl+C.
-Servern visar redan byggda filer i `frontend/dist`. Prisändringar i källkoden
-kräver ett nytt bygge för att synas här.
-
-På Windows kan du också dubbelklicka på `START-PREVIEW-WINDOWS.bat`.
-På Mac/Linux kan du köra `sh start-preview.sh`.
-
 ## Utveckla med React och Vite
+
+Du behöver Node.js >=22.12.0. Kör från projektets huvudmapp:
 
 ```sh
 cd frontend
@@ -51,17 +37,17 @@ Låsfil medföljer. node_modules medföljer inte.
 npm run build
 ```
 
-### Portabelt alternativ som har körts i leveranskontrollen
+### Förhandsvisa produktionsbygget lokalt
 
 ```sh
-npm run build:portable
-npm run preview:portable
+npm run preview
 ```
 
-Det portabla bygget använder TypeScript-kompilatorn för att bearbeta JavaScript/JSX
-utan plattformsspecifika esbuild-/Rollup-binärer. React och React Router är låsta
-till versionerna i den uppladdade Buffalo-referensen. Det är samma komponenter
-som Vite-projektet, inte en separat omdesign.
+Kör först `npm run build`, sedan `npm run preview` i `frontend`.
+Öppna http://127.0.0.1:4173. Avsluta med Ctrl+C.
+Ändringar i källkoden kräver ett nytt bygge för att synas här.
+
+Vercel använder samma produktionsbygge och publicerar `frontend/dist`.
 
 ## Här ändrar du innehållet
 
@@ -71,7 +57,7 @@ som Vite-projektet, inte en separat omdesign.
 - `frontend/src/content/data.js`: galleri och kategorier.
 - `frontend/src/content/seo.js`: sidtitlar, beskrivningar och strukturerad information.
 - `frontend/src/styles/global.css`: färger, typografi, mellanrum, animationer och mobilregler.
-- `frontend/src/components/CinematicHero.js`: hero med scrollkapitel.
+- `frontend/src/components/CinematicHero.jsx`: hero med scrollkapitel.
 - `frontend/public/images/`: logga, salongsbilder och inspirationsbilder.
 
 Appmodulerna är funktionella men bevarar delar av den kompilerade React-syntaxen

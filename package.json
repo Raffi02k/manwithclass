@@ -6,8 +6,6 @@
     "dev": "npm --prefix frontend run dev",
     "build": "npm --prefix frontend run build",
     "preview": "npm --prefix frontend run preview",
-    "setup": "npm --prefix frontend ci",
-    "preview:portable": "node frontend/scripts/serve.mjs",
-    "build:portable": "npm --prefix frontend run build:portable"
+    "setup": "npm --prefix frontend ci"
   }
 }

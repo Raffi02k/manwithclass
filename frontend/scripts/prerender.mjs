@@ -1,8 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-const portable=process.argv.includes('portable');
-const mod=await import(pathToFileURL(path.resolve(portable?'.ssr/entry-server.cjs':'.ssr/entry-server.js')).href);
+const mod=await import(pathToFileURL(path.resolve('.ssr/entry-server.js')).href);
 const api=mod.default||mod;
 const { render,renderHead,getMetadata,routePaths,site }=api;
 const template=fs.readFileSync('dist/index.html','utf8');

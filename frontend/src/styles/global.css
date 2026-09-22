@@ -485,20 +485,22 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   opacity: 1
 }
 .cinema-shade {
-  background: linear-gradient(90deg,rgba(10,11,9,.78),rgba(10,11,9,.18) 80%),linear-gradient(0deg,rgba(10,11,9,.85),transparent 46%,rgba(10,11,9,.17));
+  background: linear-gradient(90deg,rgba(10,11,9,.48),rgba(10,11,9,.08) 80%),linear-gradient(0deg,rgba(10,11,9,.65),transparent 46%,rgba(10,11,9,.12));
   z-index: 1
 }
 .cinema-topline {
   position: absolute;
-  z-index: 4;
-  top: 115px;
+  top: 96px;
   left: var(--gutter);
   right: var(--gutter);
+  z-index: 4;
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: .12em
+  letter-spacing: .12em;
+  color: #ffffff;
+  text-shadow: 0 1px 10px rgba(0,0,0,.8);
 }
 .cinema-topline>span:first-child {
   display: flex;
@@ -510,7 +512,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   height: 5px;
   border-radius: 50%;
   display: inline-block;
-  background: var(--accent)
+  background: #ffffff;
 }
 .cinema-scenes {
   position: relative;
@@ -528,28 +530,38 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   will-change: opacity,transform
 }
 .cinema-scene .eyebrow {
-  font-size: 10px;
-  margin-bottom: 20px
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  color: #ffffff;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 14px rgba(0,0,0,.8);
 }
 .cinema-scene h1,.cinema-scene h2 {
-  font-size: clamp(85px,10.1vw,154px);
-  line-height: 1.03;
-  font-weight: 600;
-  letter-spacing: -.037em
+  font-size: clamp(38px,4.5vw,58px);
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  color: #ffffff;
+  text-shadow: 0 2px 24px rgba(0,0,0,.85), 0 1px 4px rgba(0,0,0,.6);
 }
 .cinema-scene h1 {
-  margin-left: -5px
+  margin-left: 0;
+}
+.cinema-scene h1 .accent,.cinema-scene h2 .accent {
+  color: #ffffff;
 }
 .hero-bottom-copy {
   display: flex;
-  gap: 58px;
+  gap: 36px;
   align-items: center;
-  margin-top: 34px
+  margin-top: 26px
 }
 .hero-bottom-copy>p {
-  font-size: 12px;
-  line-height: 1.8;
-  color: #ddd8ce
+  font-size: 13px;
+  line-height: 1.7;
+  color: #ffffff;
+  text-shadow: 0 1px 12px rgba(0,0,0,.8);
 }
 .scene-two {
   align-items: flex-end;
@@ -557,16 +569,22 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   padding-bottom: 32px
 }
 .scene-two h2 {
-  font-size: clamp(94px,11vw,166px)
+  font-size: clamp(38px,4.5vw,58px);
+  color: #ffffff;
 }
 .scene-description {
-  font-size: 14px;
-  margin: 25px 0 17px;
-  line-height: 1.9;
-  color: #ded8cb
+  font-size: 13px;
+  margin: 18px 0 16px;
+  line-height: 1.8;
+  color: #ffffff;
+  text-shadow: 0 1px 12px rgba(0,0,0,.8);
+}
+.scene-two .text-link {
+  color: #ffffff;
 }
 .scene-three h2 {
-  font-size: clamp(95px,11vw,166px)
+  font-size: clamp(38px,4.5vw,58px);
+  color: #ffffff;
 }
 .scene-three .button {
   margin-top: 10px
@@ -593,34 +611,36 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   text-transform: uppercase;
   letter-spacing: .07em;
   font-size: 9px;
-  color: #b5b1a7;
+  color: rgba(255,255,255,0.75);
   min-width: 90px;
   text-align: left;
   display: flex;
   gap: 12px
 }
 .chapter-nav button>span {
-  color: var(--accent)
+  color: #ffffff;
 }
 .chapter-nav button i {
   position: absolute;
   inset: auto 0 0;
   height: 1px;
-  background: #6f6d60
+  background: rgba(255,255,255,0.3);
 }
 .chapter-nav button.active {
-  color: var(--text)
+  color: #ffffff;
 }
 .chapter-nav button.active i {
-  background: var(--accent);
+  background: #ffffff;
   height: 2px
 }
 .scroll-cue {
   display: flex;
-  gap: 18px;
   align-items: center;
-  font-size: 8px;
-  letter-spacing: .12em;
+  gap: 10px;
+  font-size: 9px;
+  letter-spacing: .14em;
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(0,0,0,.8);
   position: absolute;
   left: 50%;
   transform: translateX(-35%);
@@ -646,25 +666,80 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   height: 17px
 }
 .craft-strip {
-  height: 82px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding-inline: var(--gutter);
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
   background: var(--bg);
-  border-bottom: 1px solid var(--line);
-  font-size: 9px;
-  letter-spacing: .13em;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   white-space: nowrap;
-  overflow: hidden
+  overflow: hidden;
+  user-select: none;
 }
-.craft-strip i {
+.craft-ticker-row {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.craft-ticker-track {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+  will-change: transform;
+}
+.craft-ticker-track.scroll-left {
+  animation: ticker-scroll-left 38s linear infinite;
+}
+.craft-ticker-track.scroll-right {
+  animation: ticker-scroll-right 38s linear infinite;
+}
+.craft-ticker-track:hover {
+  animation-play-state: paused;
+}
+.craft-ticker-group {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.craft-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding-right: 22px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #ffffff !important;
+}
+.craft-ticker-item span {
+  color: #ffffff !important;
+}
+.craft-ticker-item i {
   width: 5px;
   height: 5px;
   transform: rotate(45deg);
-  background: var(--accent);
-  flex-shrink: 0
+  background: #ffffff !important;
+  flex-shrink: 0;
+  display: inline-block;
+}
+@keyframes ticker-scroll-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes ticker-scroll-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 /* Editorial story */
 .story-intro {
@@ -2764,7 +2839,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
     top: 99px
   }
   .cinema-scene h1 {
-    font-size: 11.5vw
+    font-size: clamp(36px, 5.2vw, 54px);
   }
   .scroll-cue {
     display: none
@@ -2947,14 +3022,14 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
     padding-top: 15px
   }
   .cinema-scene h1 {
-    font-size: clamp(58px,13.4vw,98px);
-    line-height: 1.08;
-    letter-spacing: -.03em;
-    margin-left: -2px
+    font-size: clamp(32px, 7vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -.01em;
+    margin-left: 0
   }
   .cinema-scene h2,.scene-two h2,.scene-three h2 {
-    font-size: clamp(69px,16vw,112px);
-    line-height: 1.06
+    font-size: clamp(32px, 7vw, 48px);
+    line-height: 1.1
   }
   .cinema-scene .eyebrow {
     font-size: 8px;
@@ -3015,14 +3090,14 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
     background: linear-gradient(90deg,#0c100ce3,#0c100c38),linear-gradient(0deg,#0c100cc9,transparent 60%)
   }
   .craft-strip {
-    height: 66px;
-    font-size: 7px;
-    gap: 24px;
-    padding-inline: 24px;
-    justify-content: flex-start
+    height: auto;
+    padding: 12px 0;
+    gap: 8px;
   }
-  .craft-strip>span:nth-of-type(n+3),.craft-strip>i:nth-of-type(n+2) {
-    display: none
+  .craft-ticker-item {
+    font-size: 9px;
+    gap: 16px;
+    padding-right: 16px;
   }
   .story-grid {
     grid-template-columns: 1fr;
@@ -3739,10 +3814,10 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
     gap: 8px
   }
   .cinema-scene h1 {
-    font-size: 13vw
+    font-size: clamp(28px, 8vw, 40px);
   }
   .cinema-scene h2 {
-    font-size: 17vw
+    font-size: clamp(28px, 8vw, 40px);
   }
   .cinema-scene .eyebrow {
     font-size: 7px
@@ -3864,10 +3939,12 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 }
 .cinema[data-reduced="false"] .cinema-scene h1,
 .cinema[data-reduced="false"] .cinema-scene h2 {
-  font-size: clamp(40px,min(var(--scene-title-width),calc((100cqh - var(--scene-reserved))/2.12)),166px)
+  font-size: clamp(36px,min(var(--scene-title-width),calc((100cqh - var(--scene-reserved))/3)),58px);
+  line-height: 1.08;
+  letter-spacing: -.01em;
 }
 .cinema[data-reduced="false"] .cinema-scene h1 {
-  --scene-title-width: 10.1vw;
+  --scene-title-width: 4.5vw;
   max-width: 100%
 }
 @media(max-width:980px) {
@@ -3881,10 +3958,10 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
     --scene-top: 132px;
     --scene-bottom: 115px;
     --scene-reserved: 448px;
-    --scene-title-width: 16vw
+    --scene-title-width: 8vw
   }
   .cinema[data-reduced="false"] .cinema-scene h1 {
-    --scene-title-width: 13.4vw
+    --scene-title-width: 8vw
   }
 }
 .cinema[data-reduced="true"] {
@@ -4103,9 +4180,9 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .mwc-cinema .cinema-poster.poster-0 {object-position:58% 50%}
 .mwc-cinema .cinema-poster.poster-1 {object-position:50% 50%}
 .mwc-cinema .cinema-poster.poster-2 {object-position:50% 48%}
-.mwc-cinema .scene-two h2 {font-size:clamp(78px,min(9.7vw,17svh),148px)}
-.mwc-cinema .cinema-scene h1 {font-size:clamp(76px,10.5vw,151px)}
-.mwc-cinema .scene-three h2 {font-size:clamp(76px,10.5vw,151px)}
+.mwc-cinema .scene-two h2 {font-size:clamp(36px,4.5vw,58px)}
+.mwc-cinema .cinema-scene h1 {font-size:clamp(36px,4.5vw,58px)}
+.mwc-cinema .scene-three h2 {font-size:clamp(36px,4.5vw,58px)}
 .mwc-cinema .cinema-sticky {min-height:600px}
 .mwc-cinema.is-static {height:100svh;min-height:600px}
 .mwc-cinema.is-static .cinema-sticky {position:relative}
@@ -4243,8 +4320,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
  .menu-toggle {width:40px;height:44px}
  .mwc-cinema .cinema-sticky {min-height:620px}
  .mwc-cinema .cinema-scene {padding-top:45px;inset-inline:var(--gutter)}
- .mwc-cinema .cinema-scene h1,.mwc-cinema .cinema-scene h2 {font-size:clamp(49px,12.7vw,88px);letter-spacing:-.028em;line-height:1.09}
- .mwc-cinema .scene-two h2 {font-size:clamp(46px,11.7vw,82px)}
+ .mwc-cinema .cinema-scene h1,.mwc-cinema .cinema-scene h2 {font-size:clamp(30px,8vw,44px);letter-spacing:-.01em;line-height:1.12}
+ .mwc-cinema .scene-two h2 {font-size:clamp(28px,7.5vw,42px)}
  .mwc-cinema .cinema-topline {top:107px;font-size:8px}
  .hero-bottom-copy {margin-top:27px;gap:25px}
  .cinema-scene .eyebrow {font-size:9px;margin-bottom:22px}
@@ -4255,8 +4332,8 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
  .chapter-nav button {min-width:54px;min-height:44px;font-size:7px;gap:6px;flex-direction:column;padding:5px 0 11px}
  .mwc-cinema .motion-control {font-size:8px;padding:10px;gap:5px}
  .mwc-cinema .scroll-cue {display:none}
- .craft-strip {height:62px;font-size:8px;gap:24px;overflow:hidden}
- .craft-strip span:nth-of-type(3),.craft-strip i:nth-of-type(2),.craft-strip span:last-of-type,.craft-strip i:last-of-type {display:none}
+ .craft-strip {height:auto;padding:10px 0;gap:7px}
+ .craft-ticker-item {font-size:8px;gap:14px;padding-right:14px}
  .story-intro {padding-block:68px}
  .story-grid {gap:40px}
  .story-title h2 {font-size:clamp(46px,11.7vw,78px)}
@@ -4352,7 +4429,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
  .agency-credit {margin-left:0;min-height:34px}
  .preview-note {font-size:8px;line-height:1.8}
 }
-@media(max-width:374px){.header-booking .icon {display:none}.language-switch a {width:26px}.header-inner {padding-inline:16px}.header-actions {gap:5px}.mwc-brand img {width:85px}.service-menu-row {grid-template-columns:75px minmax(0,1fr);gap:12px}.mwc-cinema .cinema-scene h1,.mwc-cinema .cinema-scene h2 {font-size:46px}.mwc-cinema .scene-two h2 {font-size:43px}.motion-control span {display:none}}
-@media(max-height:650px) and (min-width:741px){.mwc-cinema .cinema-sticky {min-height:580px}.mwc-cinema .cinema-scene h1,.mwc-cinema .cinema-scene h2 {font-size:80px}.mwc-cinema .cinema-topline{top:108px}}
+@media(max-width:374px){.header-booking .icon {display:none}.language-switch a {width:26px}.header-inner {padding-inline:16px}.header-actions {gap:5px}.mwc-brand img {width:85px}.service-menu-row {grid-template-columns:75px minmax(0,1fr);gap:12px}.mwc-cinema .cinema-scene h1,.mwc-cinema .cinema-scene h2 {font-size:30px}.mwc-cinema .scene-two h2 {font-size:28px}.motion-control span {display:none}}
+@media(max-height:650px) and (min-width:741px){.mwc-cinema .cinema-sticky {min-height:580px}.mwc-cinema .cinema-scene h1,.mwc-cinema .cinema-scene h2 {font-size:46px}.mwc-cinema .cinema-topline{top:108px}}
 @media(prefers-reduced-motion:reduce){.mwc-cinema{height:100svh;min-height:620px}.mwc-cinema .cinema-sticky{position:relative}.mwc-cinema .cinema-scenes .scene-two,.mwc-cinema .cinema-scenes .scene-three{display:none}.mwc-cinema .chapter-nav,.mwc-cinema .scroll-cue{display:none}}
 @media print{.site-header,.cinema,.site-footer,.image-label,.filter-tabs,.service-menu-photo,.booking-card,.motion-control{display:none!important}body{background:white;color:black}#main{padding:0}.page-hero{min-height:0;padding:25px 0;background:white;color:black}.page-hero>img,.page-hero-shade{display:none}.page-hero h1{font-size:32px}.section-space{padding-block:25px}.service-menu-row{break-inside:avoid;grid-template-columns:1fr auto}.service-menu-info{grid-column:1}.service-menu-actions{grid-column:2}.service-menu-actions .button{display:none}a{color:inherit}.service-price,.accent{color:#333}}

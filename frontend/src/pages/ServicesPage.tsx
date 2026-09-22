@@ -64,7 +64,7 @@ export function ServicesPage() {
               <span className="service-number">{String(i + 1).padStart(2, '0')}</span>
               <Link className="service-menu-photo" to={servicePath(s.id)} aria-label={s.title[lang]}>
                 <img
-                  src={s.image.replace('.webp', '-sm.webp')}
+                  src={s.image}
                   alt={(s.illustrative ? t('Inspirationsbild: ', 'Inspiration image: ') : '') + s.title[lang]}
                   width="440"
                   height="550"

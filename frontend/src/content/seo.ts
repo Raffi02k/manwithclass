@@ -83,7 +83,7 @@ export function structuredData(path: string) {
     name: site.fullName,
     url: site.domain + '/',
     image: site.domain + '/images/salon-wide.webp',
-    logo: site.domain + '/images/logo.png',
+    logo: site.domain + '/images/logo.webp',
     telephone: '+46709627503',
     email: site.email,
     priceRange: '$$',
@@ -166,7 +166,7 @@ const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').repl
 export function renderHead(path: string) {
   const m = getMetadata(path);
   const schema = structuredData(path);
-  const image = esc(`${site.domain}/images/index-pic.png`);
+  const image = esc(`${site.domain}/images/index-pic.webp`);
   return `<title>${esc(m.title)}</title>
 <meta name="description" content="${esc(m.description)}">
 <meta name="robots" content="${m.indexable ? 'index,follow,max-image-preview:large' : 'noindex,follow'}">

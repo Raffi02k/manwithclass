@@ -32,7 +32,7 @@ export const people: Person[] = [
     fullName: 'Roy Wan / Wan de Roy',
     published: true,
     role: { sv: 'Barberare / Wan de Roy Sthlm', en: 'Barber / Wan de Roy Sthlm' },
-    portrait: '/images/Roy-frisor.png',
+    portrait: '/images/Roy-frisor.webp',
     position: '42% 30%',
     intro: { sv: 'The craft is over. We came a long way.', en: 'The craft is over. We came a long way.' },
     presentation: {
@@ -72,7 +72,7 @@ export const people: Person[] = [
     fullName: 'Serhi / Man With Class',
     published: true,
     role: { sv: 'Barberare', en: 'Barber' },
-    portrait: '/images/Serhi-frisor.png',
+    portrait: '/images/Serhi-frisor.webp',
     intro: { sv: 'Möt Serhi hos Man With Class vid Odenplan.', en: 'Meet Serhi at Man With Class, Odenplan.' },
     presentation: {
       sv: 'Serhi är en av barberarna hos Man With Class på Upplandsgatan 51 i Stockholm. Välj Serhi och den behandling du vill boka på Bokadirekt, där du också hittar aktuella priser och lediga tider.',

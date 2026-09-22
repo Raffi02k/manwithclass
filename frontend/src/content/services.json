@@ -8,7 +8,7 @@
     "category": "hair",
     "price": 450,
     "minutes": 30,
-    "image": "/images/manW-Herrklippning.png",
+    "image": "/images/manW-Herrklippning.webp",
     "illustrative": false,
     "title": {
       "sv": "Herrklippning",
@@ -43,7 +43,7 @@
     "category": "combination",
     "price": 680,
     "minutes": 45,
-    "image": "/images/manW-Har-&-skagg.png",
+    "image": "/images/manW-Har-&-skagg.webp",
     "illustrative": false,
     "title": {
       "sv": "Hår & skägg",
@@ -82,7 +82,7 @@
     "category": "beard",
     "price": 350,
     "minutes": 30,
-    "image": "/images/manW-Skaggtrimning.png",
+    "image": "/images/manW-Skaggtrimning.webp",
     "illustrative": false,
     "title": {
       "sv": "Skäggtrimning",
@@ -113,7 +113,7 @@
     "category": "ritual",
     "price": 850,
     "minutes": 55,
-    "image": "/images/manW-Luxury-Treatment.png",
+    "image": "/images/manW-Luxury-Treatment.webp",
     "illustrative": false,
     "title": {
       "sv": "Luxury Treatment",
@@ -154,7 +154,7 @@
     "category": "hair",
     "price": 390,
     "minutes": 30,
-    "image": "/images/manW-Klippning-av-sidorna.png",
+    "image": "/images/manW-Klippning-av-sidorna.webp",
     "illustrative": false,
     "title": {
       "sv": "Klippning av sidorna",
@@ -189,7 +189,7 @@
     "category": "hair",
     "price": 250,
     "minutes": 15,
-    "image": "/images/manW-Maskinklippning-snagg.png",
+    "image": "/images/manW-Maskinklippning-snagg.webp",
     "illustrative": false,
     "title": {
       "sv": "Maskinklippning / snagg",
@@ -251,7 +251,7 @@
     "category": "hair",
     "price": 390,
     "minutes": 30,
-    "image": "/images/manW-Ungdom-student.png",
+    "image": "/images/manW-Ungdom-student.webp",
     "illustrative": false,
     "title": {
       "sv": "Ungdom / student",
@@ -286,7 +286,7 @@
     "category": "hair",
     "price": 350,
     "minutes": 30,
-    "image": "/images/manW-Pensionarsklippning.png",
+    "image": "/images/manW-Pensionarsklippning.webp",
     "illustrative": false,
     "title": {
       "sv": "Pensionärsklippning",

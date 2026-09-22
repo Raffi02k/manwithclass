@@ -20,11 +20,6 @@ export function GalleryCard({ item, index, onClick }: GalleryCardProps) {
     >
       <img
         src={item.src}
-        srcSet={
-          item.src.endsWith('.webp')
-            ? `${item.src.replace('.webp', '-sm.webp')} 640w, ${item.src} 1600w`
-            : undefined
-        }
         sizes="(max-width: 740px) 82vw, 355px"
         alt={item.alt[lang]}
         loading="lazy"

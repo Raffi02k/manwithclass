@@ -40,16 +40,34 @@ const nav = [
 export function Header() {
   const { lang, path, t } = useLocale();
   const [open, setOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
+  const closeTimeout = useRef<number | null>(null);
   const location = useLocation();
 
   useBodyLock(open);
 
+  const closeMenu = () => {
+    if (closing || !open) return;
+    setClosing(true);
+    closeTimeout.current = window.setTimeout(() => {
+      setOpen(false);
+      setClosing(false);
+    }, 280);
+  };
+
   useEffect(() => {
     setOpen(false);
+    setClosing(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    };
+  }, []);
 
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 35);
@@ -90,7 +108,10 @@ export function Header() {
             <button
               className="menu-toggle icon-button"
               ref={trigger}
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                setClosing(false);
+                setOpen(true);
+              }}
               aria-label={t('Öppna menyn', 'Open menu')}
               aria-expanded={open}
               aria-controls="mobile-menu"
@@ -101,18 +122,25 @@ export function Header() {
         </div>
       </header>
       <dialog
-        className="mobile-menu"
+        className={`mobile-menu ${closing ? 'is-closing' : ''}`}
         id="mobile-menu"
         ref={dialog}
-        onCancel={() => setOpen(false)}
-        onClose={() => setOpen(false)}
+        onCancel={(e) => {
+          e.preventDefault();
+          closeMenu();
+        }}
+        onClick={(e) => {
+          if (e.target === dialog.current) {
+            closeMenu();
+          }
+        }}
         aria-labelledby="menu-title"
       >
         <div className="mobile-menu-top">
           <Brand />
           <button
             className="icon-button"
-            onClick={() => setOpen(false)}
+            onClick={closeMenu}
             aria-label={t('Stäng menyn', 'Close menu')}
           >
             <Icon name="close" />
@@ -127,7 +155,7 @@ export function Header() {
               key={n.key}
               to={path(n.key)}
               end={n.key === 'home'}
-              onClick={() => setOpen(false)}
+              onClick={closeMenu}
             >
               <span>0{i + 1}</span>
               {n[lang]}
@@ -135,12 +163,32 @@ export function Header() {
             </NavLink>
           ))}
         </nav>
-        <BookingButton />
-        <div className="mobile-menu-info">
-          {site.address}
-          <br />
-          {site.postcode} {site.city}
-          <a href={site.phoneHref}>{site.phone}</a>
+        <div className="mobile-menu-bottom">
+          <div className="mobile-menu-actions">
+            <div onClick={closeMenu} className="mobile-menu-btn-wrap">
+              <BookingButton
+                label={t('Boka tid', 'Book now')}
+                className="button button-primary mobile-menu-btn"
+              />
+            </div>
+            <a
+              href={site.phoneHref}
+              className="button button-outline mobile-menu-btn mobile-menu-phone"
+              onClick={closeMenu}
+            >
+              <Icon name="phone" />
+              <span>{t('Ring oss', 'Call us')}</span>
+            </a>
+          </div>
+          <div className="mobile-menu-meta">
+            <div className="mobile-menu-address">
+              <Icon name="pin" />
+              <span>{site.address} • {site.city}</span>
+            </div>
+            <div className="mobile-menu-phone-text">
+              <a href={site.phoneHref}>{site.phone}</a>
+            </div>
+          </div>
         </div>
       </dialog>
     </>

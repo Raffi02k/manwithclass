@@ -175,8 +175,6 @@ export function CinematicHero() {
               data-poster
               className={`cinema-poster poster-${i}`}
               src={`/images/${name}.webp`}
-              srcSet={`/images/${name}-sm.webp 640w, /images/${name}.webp 1600w`}
-              sizes="100vw"
               alt=""
               width="1600"
               height="1060"

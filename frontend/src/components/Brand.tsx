@@ -27,7 +27,7 @@ export function Brand({ large = false }: BrandProps) {
       onClick={scrollToTop}
       aria-label={t('Man With Class, startsida', 'Man With Class, home')}
     >
-      <img src="/images/logo-small.webp" alt="Man With Class Barbershop" width="300" height="177" />
+      <img src="/images/logo.webp" alt="Man With Class Barbershop" width="300" height="189" />
     </Link>
   );
 }

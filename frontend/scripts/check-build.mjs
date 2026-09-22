@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
-import { publishedPeople } from '../src/content/people.js';
+import { publishedPeople } from '../.ssr/entry-server.js';
 const { routes,indexable }=JSON.parse(fs.readFileSync('dist/route-manifest.json','utf8'));
 const titles=new Set();
 for(const route of routes) {

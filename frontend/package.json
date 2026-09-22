@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir .ssr && node scripts/prerender.mjs && node scripts/check-build.mjs",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build && vite build --ssr src/entry-server.tsx --outDir .ssr && node scripts/prerender.mjs && node scripts/check-build.mjs",
     "preview": "vite preview",
     "test:static": "node scripts/check-build.mjs"
   },
@@ -22,6 +23,7 @@
     "@types/node": "22.15.30",
     "@types/react": "18.3.18",
     "@types/react-dom": "18.3.5",
+    "typescript": "5.8.3",
     "vite": "7.3.1"
   }
 }

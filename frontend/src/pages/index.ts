@@ -1,0 +1,11 @@
+export { HomePage } from './HomePage';
+export { AboutPage } from './AboutPage';
+export { BarbersPage } from './BarbersPage';
+export { BarberPage } from './BarberPage';
+export { ServicesPage } from './ServicesPage';
+export { ServicePage } from './ServicePage';
+export { GalleryPage } from './GalleryPage';
+export { ReviewsPage } from './ReviewsPage';
+export { ContactPage } from './ContactPage';
+export { PrivacyPage } from './PrivacyPage';
+export { NotFoundPage } from './NotFoundPage';

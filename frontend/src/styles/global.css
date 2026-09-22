@@ -690,10 +690,10 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   will-change: transform;
 }
 .craft-ticker-track.scroll-left {
-  animation: ticker-scroll-left 38s linear infinite;
+  animation: ticker-scroll-left 115s linear infinite;
 }
 .craft-ticker-track.scroll-right {
-  animation: ticker-scroll-right 38s linear infinite;
+  animation: ticker-scroll-right 115s linear infinite;
 }
 .craft-ticker-track:hover {
   animation-play-state: paused;
@@ -810,15 +810,16 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 /* Service preview */
 .services-split {
   display: grid;
-  grid-template-columns: .95fr 1.05fr;
-  gap: 76px;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 64px;
   align-items: start
 }
 .services-photo {
-  height: 675px;
+  height: 540px;
   position: sticky;
   top: 116px;
-  overflow: hidden
+  overflow: hidden;
+  border-radius: 4px;
 }
 .services-photo>img {
   height: 100%;
@@ -845,16 +846,16 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 }
 .services-photo>.eyebrow {
   position: absolute;
-  top: 31px;
-  left: 32px;
+  top: 24px;
+  left: 24px;
   font-size: 8px
 }
 .services-photo>h2 {
   position: absolute;
-  bottom: 75px;
-  left: 32px;
-  font-size: 60px;
-  line-height: 1.14;
+  bottom: 55px;
+  left: 24px;
+  font-size: 42px;
+  line-height: 1.1;
   max-width: 95%
 }
 .services-photo>h2>span {
@@ -862,76 +863,107 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 }
 .services-stamp {
   position: absolute;
-  bottom: 28px;
-  right: 27px;
+  bottom: 22px;
+  right: 22px;
   border: 1px solid var(--accent);
   border-radius: 50%;
-  width: 78px;
-  height: 78px;
+  width: 62px;
+  height: 62px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: var(--display);
-  font-size: 33px;
+  font-size: 26px;
   line-height: 1
 }
 .services-stamp>span {
   font-family: var(--body);
   font-size: 6px;
   letter-spacing: .1em;
-  margin-top: 8px
+  margin-top: 4px
 }
 .services-copy {
-  padding-top: 12px
+  padding-top: 8px
 }
 .services-copy h2 {
-  font-size: clamp(40px,4.25vw,62px);
-  line-height: 1.14
+  font-size: clamp(44px,4.8vw,68px);
+  line-height: 1.1
 }
 .services-copy>div>p:not(.eyebrow) {
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 24px
+  color: #dfdbd2;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 20px;
+  max-width: 580px;
 }
 .service-preview-list {
-  margin-top: 38px;
+  margin-top: 36px;
   border-top: 1px solid var(--line)
 }
 .service-preview-list>a {
   display: grid;
-  grid-template-columns: 20px 1fr auto 19px;
-  gap: 15px;
+  grid-template-columns: 24px 1fr auto 20px;
+  gap: 18px;
   align-items: center;
-  padding: 28px 0;
+  padding: 24px 8px;
   border-bottom: 1px solid var(--line);
-  transition: padding .3s,background .3s
+  transition: padding .3s,background .3s,border-color .3s
 }
 .service-preview-list>a:hover {
-  padding-left: 8px;
-  background: linear-gradient(90deg,rgba(208,176,132,.055),transparent)
+  padding-left: 16px;
+  background: linear-gradient(90deg,rgba(208,176,132,.08),transparent);
+  border-bottom-color: rgba(208,176,132,.3)
 }
 .service-preview-list h3 {
-  font-size: 27px
+  font-size: 30px;
+  letter-spacing: .02em;
+  color: #ffffff;
+  transition: color .2s ease;
+}
+.service-preview-list>a:hover h3 {
+  color: var(--accent)
 }
 .service-preview-list p {
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 7px
+  font-size: 13px;
+  color: #b0aaa0;
+  margin-top: 6px
 }
 .service-number {
   font-family: var(--body);
-  font-size: 9px;
-  color: var(--accent)
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: .08em;
 }
 .service-price {
-  font-size: 12px;
-  font-weight: 600;
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: .03em;
   white-space: nowrap;
-  color: var(--accent)
+  color: var(--accent);
+  background: rgba(208,176,132,.12);
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(208,176,132,.3);
+  display: inline-flex;
+  align-items: center;
+  transition: all .25s ease;
+}
+.service-preview-list>a:hover .service-price {
+  background: rgba(208,176,132,.22);
+  border-color: var(--accent);
+  transform: scale(1.05);
 }
 .service-preview-list .icon {
-  width: 17px
+  width: 19px;
+  height: 19px;
+  color: var(--accent);
+  transition: transform .25s ease;
+}
+.service-preview-list>a:hover .icon {
+  transform: translateX(3px) translateY(-3px);
 }
 .service-list-footer {
   margin-top: 32px

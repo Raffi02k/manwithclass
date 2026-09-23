@@ -72,10 +72,17 @@ export const gallery: GalleryItem[] = [
   { id: 'our-name', src: '/images/salon-brand.webp', title: { sv: 'Man With Class.', en: 'Man With Class.' }, alt: { sv: 'Man With Class logotyp på salongens vägg', en: 'Man With Class logo on the salon wall' }, category: 'salon', illustrative: false }
 ];
 
+import { projects, projectCategories, ProjectItem } from './projects';
+
+export { projects, projectCategories };
+export type { ProjectItem };
+
 export default {
   services,
   reviews,
   categories,
   priceLabel,
-  gallery
+  gallery,
+  projects,
+  projectCategories
 };

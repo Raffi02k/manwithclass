@@ -7,6 +7,7 @@ import { Icon } from './Icon';
 
 const nav = [
   { key: 'services', sv: 'Tjänster & priser', en: 'Services & prices' },
+  { key: 'projects', sv: 'Projekt', en: 'Projects' },
   { key: 'about', sv: 'Om oss', en: 'Our story' },
   { key: 'gallery', sv: 'Galleri', en: 'Gallery' },
   { key: 'reviews', sv: 'Omdömen', en: 'Reviews' },

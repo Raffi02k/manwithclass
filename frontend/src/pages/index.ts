@@ -5,6 +5,8 @@ export { BarberPage } from './BarberPage';
 export { ServicesPage } from './ServicesPage';
 export { ServicePage } from './ServicePage';
 export { GalleryPage } from './GalleryPage';
+export { ProjectsPage } from './ProjectsPage';
+export { ProjectDetailPage } from './ProjectDetailPage';
 export { ReviewsPage } from './ReviewsPage';
 export { ContactPage } from './ContactPage';
 export { PrivacyPage } from './PrivacyPage';

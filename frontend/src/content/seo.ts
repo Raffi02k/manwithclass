@@ -1,11 +1,12 @@
 import { site } from './site';
 import { resolveRoute, alternatePath } from './routes';
-import { services } from './data';
+import { services, projects, ProjectItem } from './data';
 import { publishedPeople, Person } from './people';
 
 const descriptions: Record<string, { sv: string; en: string }> = {
   home: { sv: 'Barbershop vid Odenplan i Vasastan. Herrklippning, skäggtrimning och klassisk rakning på Upplandsgatan 51 i Stockholm. Boka hos Man With Class.', en: 'Barbershop at Odenplan in Vasastan, Stockholm. Men’s haircuts, beard trims and traditional shaves at Upplandsgatan 51. Book at Man With Class.' },
   services: { sv: 'Se behandlingar och priser hos Man With Class vid Odenplan i Vasastan, Stockholm: herrklippning, skäggtrimning, rakning och paket. Boka via Bokadirekt.', en: 'Explore treatments and prices at Man With Class, Odenplan in Vasastan, Stockholm: haircuts, beard grooming, shaves and packages. View prices and book via Bokadirekt.' },
+  projects: { sv: 'Utforska utförda herrklippningar, skäggdesign och signaturprojekt vid Odenplan i Vasastan, Stockholm. Hantverk med knivskarp finish hos Man With Class.', en: 'Explore reference haircuts, beard designs, and signature transformations crafted at Odenplan in Vasastan, Stockholm by Man With Class Barbershop.' },
   about: { sv: 'Lär känna Man With Class, en barbershop vid Odenplan i Vasastan. Personlig stil och barberarhantverk på Upplandsgatan 51 i Stockholm.', en: 'Get to know Man With Class, a barbershop at Odenplan in Vasastan. Personal style and barbering at Upplandsgatan 51 in Stockholm.' },
   barbers: { sv: 'Möt Roy och Serhi hos Man With Class vid Odenplan i Stockholm. Välj barberare och behandling och se lediga tider på Bokadirekt.', en: 'Meet Roy and Serhi at Man With Class at Odenplan in Stockholm. Choose your barber and treatment and check availability on Bokadirekt.' },
   gallery: { sv: 'Se bilder från Man With Class vid Odenplan i Vasastan. Upptäck salongen och känslan bakom barberarhantverket på Upplandsgatan 51.', en: 'See photos from Man With Class at Odenplan in Vasastan. Explore the salon and the atmosphere behind the barbering at Upplandsgatan 51.' },
@@ -18,6 +19,7 @@ const descriptions: Record<string, { sv: string; en: string }> = {
 const titles: Record<string, { sv: string; en: string }> = {
   home: { sv: 'Barbershop vid Odenplan i Stockholm', en: 'Barbershop at Odenplan, Stockholm' },
   services: { sv: 'Tjänster & priser – Barbershop vid Odenplan, Vasastan', en: 'Services & prices – Barbershop at Odenplan, Vasastan' },
+  projects: { sv: 'Referensprojekt & Herrklippning i Stockholm – Odenplan, Vasastan', en: 'Reference Projects & Men’s Grooming in Stockholm – Odenplan' },
   about: { sv: 'Om salongen i Vasastan', en: 'About our Vasastan salon' },
   barbers: { sv: 'Våra barberare Roy & Serhi – Odenplan', en: 'Our barbers Roy & Serhi – Odenplan' },
   gallery: { sv: 'Galleri & salongen vid Odenplan', en: 'Gallery & the salon at Odenplan' },
@@ -39,6 +41,7 @@ export interface PageMetadata {
   alternates: Array<{ lang: string; href: string }>;
   service?: any;
   person?: Person;
+  project?: ProjectItem;
   key: string;
 }
 
@@ -47,16 +50,24 @@ export function getMetadata(path: string): PageMetadata {
   const { lang, key } = route;
   const s = services.find(item => item.id === route.serviceId);
   const person = publishedPeople.find(p => p.slug === route.personSlug);
+  const project = projects.find(item => item.slug === route.projectSlug);
+
   const title = person
     ? `${lang === 'sv' ? 'Lär känna' : 'Meet'} ${person.fullName} | Man With Class`
     : s
     ? `${s.title[lang]} ${lang === 'sv' ? 'vid Odenplan, Vasastan' : 'at Odenplan, Vasastan'} | Man With Class Barbershop`
-    : `${titles[key === 'service' ? '404' : key][lang]} | Man With Class`;
+    : project
+    ? `${project.seo.title[lang]}`
+    : `${titles[key === 'service' || key === 'project' ? '404' : key]?.[lang] || titles['404'][lang]} | Man With Class`;
+
   const description = person
     ? `${person.role[lang]}. ${person.intro[lang]}`
     : s
     ? `${s.title[lang]} ${lang === 'sv' ? 'hos' : 'at'} Man With Class ${lang === 'sv' ? 'vid Odenplan i Vasastan' : 'at Odenplan in Vasastan'}. ${s.intro[lang]} ${lang === 'sv' ? 'Boka din tid på Upplandsgatan 51 i Stockholm via Bokadirekt.' : 'Book your appointment at Upplandsgatan 51 in Stockholm via Bokadirekt.'}`
-    : select(descriptions[key === 'service' ? '404' : key], lang);
+    : project
+    ? `${project.seo.description[lang]}`
+    : select(descriptions[key === 'service' || key === 'project' ? '404' : key] || descriptions['404'], lang);
+
   return {
     title,
     description,
@@ -70,6 +81,7 @@ export function getMetadata(path: string): PageMetadata {
     })),
     service: s,
     person,
+    project,
     key
   };
 }
@@ -103,6 +115,11 @@ export function structuredData(path: string) {
     areaServed: [
       { '@type': 'AdministrativeArea', name: 'Odenplan' },
       { '@type': 'AdministrativeArea', name: 'Vasastan' },
+      { '@type': 'AdministrativeArea', name: 'Sankt Eriksplan' },
+      { '@type': 'AdministrativeArea', name: 'Birkastan' },
+      { '@type': 'AdministrativeArea', name: 'Kungsholmen' },
+      { '@type': 'AdministrativeArea', name: 'Norrmalm' },
+      { '@type': 'AdministrativeArea', name: 'Östermalm' },
       { '@type': 'City', name: 'Stockholm' }
     ],
     hasMap: site.mapsUrl,
@@ -112,11 +129,13 @@ export function structuredData(path: string) {
       { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '10:00', closes: '17:00' }
     ]
   };
+
   const graph: any[] = [
     business,
     { '@type': 'WebSite', '@id': site.domain + '/#website', url: site.domain + '/', name: site.fullName, inLanguage: ['sv', 'en'] },
     { '@type': 'WebPage', '@id': meta.canonical + '#webpage', url: meta.canonical, name: meta.title, description: meta.description, inLanguage: meta.lang, about: { '@id': site.domain + '/#salon' }, isPartOf: { '@id': site.domain + '/#website' } }
   ];
+
   if (meta.service) {
     const s = meta.service;
     graph.push({
@@ -158,6 +177,58 @@ export function structuredData(path: string) {
       ]
     });
   }
+
+  if (meta.project) {
+    const p = meta.project;
+    graph.push({
+      '@type': 'CreativeWork',
+      '@id': meta.canonical + '#project',
+      name: p.title[meta.lang],
+      headline: p.title[meta.lang],
+      description: p.description[meta.lang],
+      image: `${site.domain}${p.image}`,
+      dateCreated: `${p.year}-01-01`,
+      author: { '@id': site.domain + '/#salon' },
+      provider: { '@id': site.domain + '/#salon' },
+      locationCreated: {
+        '@type': 'Place',
+        name: p.location[meta.lang],
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: site.address,
+          postalCode: site.postcode,
+          addressLocality: site.city,
+          addressRegion: 'Stockholm',
+          addressCountry: 'SE'
+        }
+      }
+    });
+    graph.push({
+      '@type': 'BreadcrumbList',
+      '@id': meta.canonical + '#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: meta.lang === 'sv' ? 'Hem' : 'Home',
+          item: site.domain + (meta.lang === 'sv' ? '/' : '/en')
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: meta.lang === 'sv' ? 'Projekt & Referenser' : 'Projects & References',
+          item: site.domain + (meta.lang === 'sv' ? '/projekt' : '/en/projects')
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: p.title[meta.lang],
+          item: meta.canonical
+        }
+      ]
+    });
+  }
+
   return { '@context': 'https://schema.org', '@graph': graph };
 }
 

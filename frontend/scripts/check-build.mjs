@@ -24,7 +24,7 @@ for(const route of routes) {
   assert(fs.existsSync('dist'+decodeURIComponent(path)),`${route}: missing ${path}`);
  }
 }
-assert.equal(routes.length,54 + publishedPeople.length * 2);assert(fs.existsSync('dist/404.html'));
+assert.equal(routes.length, 54 + publishedPeople.length * 2 + 14);assert(fs.existsSync('dist/404.html'));
 for(const person of publishedPeople) {
  for(const prefix of ['/barberare/', '/en/barbers/']) {
   const route=prefix+person.slug;

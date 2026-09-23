@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { getLang, pathFor, servicePath } from '../content/routes';
+import { getLang, pathFor, servicePath, projectPath } from '../content/routes';
 
 export function useLocale() {
   const { pathname } = useLocation();
@@ -8,7 +8,8 @@ export function useLocale() {
     lang,
     t: (sv: string, en: string) => (lang === 'sv' ? sv : en),
     path: (key: string) => pathFor(key, lang),
-    servicePath: (id: string) => servicePath(id, lang)
+    servicePath: (id: string) => servicePath(id, lang),
+    projectPath: (slug: string) => projectPath(slug, lang)
   };
 }
 

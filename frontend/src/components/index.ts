@@ -23,3 +23,4 @@ export * from './PersonCard';
 export * from './Barbers';
 export * from './Timeline';
 export * from './PersonGallery';
+export * from './ProjectsSection';

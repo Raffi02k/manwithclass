@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { resolveRoute } from './content/routes';
-import { services } from './content/data';
+import { services, projects } from './content/data';
 import { publishedPeople } from './content/people';
 import { MotionProvider } from './components/MotionProvider';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -16,6 +16,8 @@ import {
   ServicesPage,
   ServicePage,
   GalleryPage,
+  ProjectsPage,
+  ProjectDetailPage,
   ReviewsPage,
   ContactPage,
   PrivacyPage,
@@ -34,6 +36,9 @@ export function App() {
   } else if (route.key === 'service') {
     const service = services.find((s) => s.id === route.serviceId) || services[0];
     pageContent = <ServicePage service={service} />;
+  } else if (route.key === 'project') {
+    const project = projects.find((p) => p.slug === route.projectSlug);
+    pageContent = project ? <ProjectDetailPage project={project} /> : <NotFoundPage />;
   } else {
     switch (route.key) {
       case 'home':
@@ -41,6 +46,9 @@ export function App() {
         break;
       case 'services':
         pageContent = <ServicesPage />;
+        break;
+      case 'projects':
+        pageContent = <ProjectsPage />;
         break;
       case 'about':
         pageContent = <AboutPage />;

@@ -1669,9 +1669,14 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .story-feature .text-link {
   margin-top: 30px
 }
-/* Real, attributed review excerpts */
 .reviews-section {
-  overflow: hidden
+  overflow: hidden;
+}
+.reviews-section.section-space {
+  padding-bottom: 24px;
+}
+.location-section.section-space {
+  padding-top: 48px;
 }
 .reviews-heading {
   text-align: center
@@ -1948,7 +1953,7 @@ button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   gap: 24px;
   align-items: center;
   justify-content: center;
-  margin-top: 34px
+  margin-top: 18px;
 }
 .reviews-foot>span {
   font-size: 9px;

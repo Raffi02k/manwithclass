@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { reviews } from '../content/data';
 import { useLocale } from '../hooks/useLocale';
 import { useMotion } from './MotionProvider';
-import { ReviewCard, ReviewSummary, ReviewSourceNote } from './ReviewCard';
+import { ReviewCard, ReviewSummary } from './ReviewCard';
 import { Icon } from './Icon';
 
 const mid = Math.ceil(reviews.length / 2);
@@ -241,9 +241,6 @@ export function ReviewsRail() {
           {t('Alla omdömen', 'All reviews')}
           <Icon />
         </Link>
-      </div>
-      <div className="container">
-        <ReviewSourceNote />
       </div>
     </section>
   );

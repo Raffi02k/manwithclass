@@ -40,10 +40,13 @@ export function ReviewCard({ review, full = false, duplicate = false }: ReviewCa
         </span>
         <div>
           <strong>{review.name}</strong>
-          <span>Google / {review.date.slice(0, 4)}</span>
+          <span>
+            {review.barber ? `${t('till', 'for')} ${review.barber} • ` : ''}
+            {review.source || 'Bokadirekt'} / {review.date.slice(0, 4)}
+          </span>
         </div>
-        <span className="review-source-mark" aria-label="Google">
-          G
+        <span className="review-source-mark" aria-label={review.source || 'Bokadirekt'}>
+          {review.source === 'Google' ? 'G' : 'B'}
         </span>
       </div>
       <Stars rating={review.rating} />
@@ -66,7 +69,7 @@ export function ReviewCard({ review, full = false, duplicate = false }: ReviewCa
             timeZone: 'UTC'
           }).format(new Date(review.date))}
         </time>
-        {lang === 'en' && review.translation ? ' / Google translation' : ''}
+        {lang === 'en' && review.translation ? ' / Translated' : ''}
       </p>
     </article>
   );
@@ -95,8 +98,8 @@ export function ReviewSourceNote() {
   return (
     <p className="content-note review-source-note">
       {t(
-        'Bokadirekt-betyget kontrollerades 15 september 2026. Korten visar tidigare publicerade Google-omdömen från november 2024, hämtade ur salongens befintliga webbplats. Ingen automatisk liveuppdatering.',
-        'Bokadirekt rating checked on 15 September 2026. Cards show previously published Google reviews from November 2024, supplied in the salon’s existing website. Not a live feed.'
+        'Bokadirekt-betyget kontrollerat i oktober 2026. Korten visar verifierade kundomdömen från Bokadirekt.',
+        'Bokadirekt rating checked in October 2026. Cards display verified customer reviews from Bokadirekt.'
       )}
     </p>
   );

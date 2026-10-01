@@ -6,7 +6,8 @@ import { useMotion } from './MotionProvider';
 import { ReviewCard, ReviewSummary, ReviewSourceNote } from './ReviewCard';
 import { Icon } from './Icon';
 
-const groups = [reviews.slice(0, 5), reviews.slice(5)];
+const mid = Math.ceil(reviews.length / 2);
+const groups = [reviews.slice(0, mid), reviews.slice(mid)];
 
 export function ReviewRow({ row }: { row: number }) {
   const rail = useRef<HTMLDivElement>(null);

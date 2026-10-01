@@ -29,6 +29,8 @@ export interface ReviewItem {
   rating: number;
   date: string;
   text: LocalizedString;
+  barber?: string;
+  source?: string;
   translation?: boolean;
 }
 

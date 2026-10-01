@@ -1,122 +1,197 @@
 [
   {
     "id": "review-1",
-    "name": "Elias Järkemyr",
+    "name": "Maria F.",
     "rating": 5,
-    "date": "2024-11-30",
+    "date": "2026-09-29",
+    "barber": "Roy",
+    "source": "Bokadirekt",
     "text": {
-      "sv": "Klippt mig här flera gånger och har varit lika nöjd varje gång. Proffsig och härlig personal med ett öga för perfektion. Kan absolut rekommendera!",
-      "en": "Have had my hair cut here several times and have been equally satisfied every time.Professional and lovely staff with an eye for perfection. Can absolutely recommend!"
+      "sv": "Trevlig, serviceminded och klippte mycket bra.",
+      "en": "Friendly, service-minded and gave a very good haircut."
     },
-    "source": "Google",
     "translation": true
   },
   {
     "id": "review-2",
-    "name": "Robert",
+    "name": "William D.",
     "rating": 5,
-    "date": "2024-11-30",
+    "date": "2026-09-23",
+    "barber": "Roy",
+    "source": "Bokadirekt",
     "text": {
-      "sv": "Riktigt nöjd med klippning av både hår och skägg.\nInte alla som är bra på helheten.\nBra känsla samt lyhörd för kunden.\nRekommenderas starkt!",
-      "en": "Really satisfied with cutting both hair and beard.\nNot everyone is good at the big picture.\nGood feeling and responsive to the customer.\nHighly recommended!"
+      "sv": "Bästa som vanligt",
+      "en": "The best, as usual"
     },
-    "source": "Google",
     "translation": true
   },
   {
     "id": "review-3",
-    "name": "Sebastian Johansson",
+    "name": "Edvin A.",
     "rating": 5,
-    "date": "2024-11-28",
+    "date": "2026-09-21",
+    "barber": "Roy",
+    "source": "Bokadirekt",
     "text": {
-      "sv": "Toppklass ☝️",
-      "en": "Top class ☝️"
+      "sv": "Snäll och trevlig frisör som dessutom är väldigt bra på det han gör!",
+      "en": "Kind and friendly barber who is also very skilled at what he does!"
     },
-    "source": "Google",
     "translation": true
   },
   {
     "id": "review-4",
-    "name": "Liam Borg",
+    "name": "Melvin H.",
     "rating": 5,
-    "date": "2024-11-28",
+    "date": "2026-09-19",
+    "barber": "Roy",
+    "source": "Bokadirekt",
     "text": {
-      "sv": "Grymt resultat och trevlig service, testade när jag var på besök i Stockholm och kommer definitivt tillbaka!🙏🏽",
-      "en": "Great result and nice service, tested when I was visiting Stockholm and will definitely come back!🙏🏽"
+      "sv": "Riktigt bra bemötande och klippning",
+      "en": "Really great service and haircut"
     },
-    "source": "Google",
     "translation": true
   },
   {
     "id": "review-5",
-    "name": "Marcus Larsson",
+    "name": "Erik K.",
     "rating": 5,
-    "date": "2024-11-28",
+    "date": "2026-09-15",
+    "barber": "Roy",
+    "source": "Bokadirekt",
     "text": {
-      "sv": "Rekommenderar starkt denna salong! Trevlig personal & grymt duktiga på sin sak. 5/5",
-      "en": "Highly recommend this salon! Nice staff & very good at what they do. 5/5"
+      "sv": "Roy är grym - äntligen en frisör som hjälper med en plan för mitt hår! Full pott!",
+      "en": "Roy is great - finally a barber who helps me with a plan for my hair! Top score!"
     },
-    "source": "Google",
     "translation": true
   },
   {
     "id": "review-6",
-    "name": "Naji Mrad",
+    "name": "Miguel R.",
     "rating": 5,
-    "date": "2024-11-24",
+    "date": "2026-09-13",
+    "barber": "Roy",
+    "source": "Bokadirekt",
     "text": {
-      "sv": "Jag har varit på många olika barbershops, men ingen har imponerat på mig så mycket som denna. Från det ögonblick jag klev in, blev jag bemött med vänlighet och professionalism. Själva klippningen och skägget var perfekt, noggrant utförd och precis enligt mina önskemål. Det märks att han verkligen brinner för sitt yrke och lägger stor vikt vid detaljer, helt enkelt världsklass!",
-      "en": "I have been to many different barbershops, but none have impressed me as much as this one. From the moment I stepped in, I was greeted with kindness and professionalism. The actual haircut and beard was perfect, carefully executed and exactly according to my wishes. It can be seen that he is really passionate about his profession and pays great attention to details, simply world class!"
+      "sv": "Superbra bemötande och service, Toppen frisör.",
+      "en": "Super friendly reception and service, top-notch barber."
     },
-    "source": "Google",
     "translation": true
   },
   {
     "id": "review-7",
-    "name": "Lisa Olofsson",
+    "name": "Jonatan R.",
     "rating": 5,
-    "date": "2024-11-24",
+    "date": "2026-09-12",
+    "barber": "Roy",
+    "source": "Bokadirekt",
     "text": {
-      "sv": "Var där med min son, otroligt duktig frisör. Bra bemötande , fräsch salong och öga för detaljer. Vi kommer verkligen att komma tillbaka.",
-      "en": "Was there with my son, incredibly talented hairdresser. Good treatment, fresh salon and eye for details. We will definitely be back."
+      "sv": "Fantastisk upplevelse och bemötande, som vanligt!! Alltid nöjd när jag går därifrån!",
+      "en": "Fantastic experience and hospitality, as always!! Always satisfied when I leave!"
     },
-    "source": "Google",
     "translation": true
   },
   {
     "id": "review-8",
-    "name": "Chris S",
+    "name": "Melvin E.",
     "rating": 5,
-    "date": "2024-11-24",
+    "date": "2026-09-09",
+    "barber": "Roy",
+    "source": "Bokadirekt",
     "text": {
-      "sv": "En frisör som verkligen kan sin sak! Han har ett öga för detaljer och jobbar snabbt och effektivt. Rekommenderas starkt!",
-      "en": "A hairdresser who really knows his stuff! He has an eye for detail and works quickly and efficiently. Highly recommended!"
+      "sv": "Sjukt go personal och riktigt bra klippning! Kommer definitivt tillbaka.",
+      "en": "Incredibly great staff and a really good haircut! Will definitely be back."
     },
-    "source": "Google",
     "translation": true
   },
   {
     "id": "review-9",
-    "name": "Sandy William",
+    "name": "Adam S.",
     "rating": 5,
-    "date": "2024-11-24",
+    "date": "2026-09-04",
+    "barber": "Roy",
+    "source": "Bokadirekt",
     "text": {
-      "sv": "Jag och min pappa besökte nyligen MAN WITH  CLASS barbershop i Stockholm, en fantastisk barberarsalong, och vi var båda jättenöjda med upplevelsen. Från det ögonblick vi klev in i butiken blev vi välkomnade av en vänlig och professionell personal som gjorde att vi kände oss som hemma. Atmosfären var avslappnad och inbjudande, vilket gjorde det lätt att slappna av. Vi uppskattade verkligen den personliga servicen och den uppmärksamhet som personalen gav oss. Det är tydligt att de brinner för sitt arbete och vill ge sina kunder den bästa möjliga upplevelsen. Jag rekommenderar starkt denna barberarsalong till alla som söker en högkvalitativ klippning och en trevlig atmosfär!",
-      "en": "Me and my dad recently visited MAN WITH CLASS barbershop in Stockholm, a fantastic barbershop, and we were both very pleased with the experience. From the moment we stepped into the store, we were greeted by friendly and professional staff who made us feel right at home. The atmosphere was relaxed and inviting, making it easy to relax. We really appreciated the personal service and attention the staff gave us. It is clear that they are passionate about their work and want to give their customers the best possible experience. I highly recommend this barbershop to anyone looking for a high quality haircut and a nice atmosphere!"
+      "sv": "Alltid lika nöjd & proffesionellt bemötande!",
+      "en": "Always equally satisfied & professional hospitality!"
     },
-    "source": "Google",
     "translation": true
   },
   {
     "id": "review-10",
-    "name": "can sag",
+    "name": "Alexander F.",
     "rating": 5,
-    "date": "2024-11-24",
+    "date": "2026-09-01",
+    "barber": "Roy",
+    "source": "Bokadirekt",
     "text": {
-      "sv": "Servicen och upplevelsen lever definitivt upp till namnet MAN WITH CLASS. Super nöjd med allt, verkligen!",
-      "en": "The service and experience definitely lives up to the name MAN WITH CLASS. Super happy with everything, really!"
+      "sv": "Snyggt klippt och trevligt bemötande!",
+      "en": "Sharp cut and friendly hospitality!"
     },
-    "source": "Google",
+    "translation": true
+  },
+  {
+    "id": "review-11",
+    "name": "Ludvig S.",
+    "rating": 5,
+    "date": "2026-08-29",
+    "barber": "Roy",
+    "source": "Bokadirekt",
+    "text": {
+      "sv": "Hela upplevelsen var otroligt bra och jag kommer definitivt tillbaka. Grym ägare som verkligen kan sin grej och som får en att känna sig välkommen. Rekommenderar starkt.",
+      "en": "The whole experience was incredibly good and I will definitely return. Great owner who truly knows his craft and makes you feel welcome. Highly recommend."
+    },
+    "translation": true
+  },
+  {
+    "id": "review-12",
+    "name": "Niklas J.",
+    "rating": 5,
+    "date": "2026-08-27",
+    "barber": "Serhi",
+    "source": "Bokadirekt",
+    "text": {
+      "sv": "Rekommenderas 🙏🏻🙏🏻🙏🏻",
+      "en": "Highly recommended 🙏🏻🙏🏻🙏🏻"
+    },
+    "translation": true
+  },
+  {
+    "id": "review-13",
+    "name": "Muhammed T.",
+    "rating": 5,
+    "date": "2026-08-24",
+    "barber": "Serhi",
+    "source": "Bokadirekt",
+    "text": {
+      "sv": "fantastiskt super nöjd",
+      "en": "fantastic, super satisfied"
+    },
+    "translation": true
+  },
+  {
+    "id": "review-14",
+    "name": "Stefan G.",
+    "rating": 5,
+    "date": "2026-08-01",
+    "barber": "Roy",
+    "source": "Bokadirekt",
+    "text": {
+      "sv": "Professionella och trevliga. Leverar ALLTID",
+      "en": "Professional and friendly. ALWAYS delivers"
+    },
+    "translation": true
+  },
+  {
+    "id": "review-15",
+    "name": "Taras H.",
+    "rating": 5,
+    "date": "2026-07-28",
+    "barber": "Serhi",
+    "source": "Bokadirekt",
+    "text": {
+      "sv": "Fantastisk upplevelse! Serhi är en otroligt skicklig barberare med stor känsla för detaljer. Han lyssnade på mina önskemål och resultatet blev ännu bättre än jag hade förväntat mig. Professionell, noggrann och väldigt trevlig. Jag kan varmt rekommendera Serhi till alla som vill ha en riktigt bra klippning. Jag kommer definitivt tillbaka!",
+      "en": "Fantastic experience! Serhi is an incredibly skilled barber with great attention to detail. He listened to my wishes and the result was even better than I expected. Professional, thorough and very friendly. I warmly recommend Serhi to anyone looking for a truly great haircut. I will definitely be back!"
+    },
     "translation": true
   }
 ]

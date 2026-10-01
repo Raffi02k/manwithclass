@@ -46,9 +46,9 @@ export const site: SiteConfig = {
   directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=Man+With+Class+Upplandsgatan+51+Stockholm',
   mapsEmbed: 'https://maps.google.com/maps?q=Man%20With%20Class%20Upplandsgatan%2051%20Stockholm&z=16&t=k&ie=UTF8&iwloc=&output=embed',
   creditUrl: 'https://mediamagnet.se/',
-  checked: '2026-09-15',
+  checked: '2026-10-01',
   bookingRating: 4.9,
-  bookingRatingCount: 417,
+  bookingRatingCount: 433,
   indexable: import.meta.env.VITE_ENABLE_INDEXING === 'true' && import.meta.env.VITE_CONTENT_APPROVED === 'true',
   hours: [
     { label: { sv: 'Måndag – fredag', en: 'Monday – Friday' }, value: { sv: '10:00 – 19:00', en: '10:00 – 19:00' } },

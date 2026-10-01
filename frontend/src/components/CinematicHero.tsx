@@ -130,7 +130,7 @@ export function CinematicHero() {
         <div className="hero-video__trust">
           <span className="hero-video__trust-stars" aria-hidden="true">★★★★★</span>
           <span>
-            {site.bookingRating} / 5 ({site.bookingRatingCount}+ {t('omdömen på Bokadirekt', 'reviews on Bokadirekt')})
+            {site.bookingRating} / 5 ({site.bookingRatingCount} {t('betyg på Bokadirekt', 'ratings on Bokadirekt')})
           </span>
         </div>
       </div>
